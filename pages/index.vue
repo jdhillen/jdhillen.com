@@ -14,7 +14,46 @@
 <!--|== Scripts ================================================================================ -->
 <script>
 export default {
-}
+
+  name: "index-page",
+
+  props: {},
+
+  components: {},
+
+  head() {
+    return {
+      title: 'Home Page'
+    }
+  },
+
+  data() {
+    return {};
+  },
+
+  beforeCreate() {},
+
+  created() {},
+
+  beforeMount() {},
+
+  mounted() {},
+
+  beforeUpdate() {},
+
+  updated() {},
+
+  beforeDestroy() {},
+
+  destroyed() {},
+
+  computed: {},
+
+  methods: {},
+
+  watch: {}
+
+};
 </script>
 
 <!--|== CSS ==================================================================================== -->

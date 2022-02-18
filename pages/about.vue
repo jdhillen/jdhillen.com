@@ -52,7 +52,45 @@
 <script>
 export default {
 
-}
+  name: "about-page",
+
+  props: {},
+
+  components: {},
+
+  head() {
+    return {
+      title: 'About Page'
+    }
+  },
+
+  data() {
+    return {};
+  },
+
+  beforeCreate() {},
+
+  created() {},
+
+  beforeMount() {},
+
+  mounted() {},
+
+  beforeUpdate() {},
+
+  updated() {},
+
+  beforeDestroy() {},
+
+  destroyed() {},
+
+  computed: {},
+
+  methods: {},
+
+  watch: {}
+
+};
 </script>
 
 <!--|== CSS ==================================================================================== -->

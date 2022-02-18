@@ -1,20 +1,53 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div class="app">
+  <main class="app">
     <SiteHeader/>
     <Nuxt/>
     <SiteFooter/>
-  </div>
+  </main>
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
 import SiteHeader from "../components/SiteHeader.vue";
 import SiteFooter from "../components/SiteFooter.vue";
+
 export default {
-    components: { SiteHeader, SiteFooter },
-    layout: "default"
-}
+  layout: "default",
+
+  props: {},
+
+  components: { SiteHeader, SiteFooter },
+
+  data() {
+    return {};
+  },
+
+  beforeCreate() {},
+
+  created() {},
+
+  beforeMount() {},
+
+  mounted() {},
+
+  beforeUpdate() {},
+
+  updated() {},
+
+  beforeDestroy() {},
+
+  destroyed() {},
+
+  computed: {},
+
+  methods: {},
+
+  watch: {}
+
+};
+
+
 </script>
 
 <!--|== CSS ==================================================================================== -->
