@@ -27,6 +27,7 @@ export default {
       meta: [
         { name: 'description', content: 'This is the description for the Home page' },
         { name: 'og:type', content: 'website' },
+        { name: 'og:url', content: 'https://jdhillen.com' },
         { name: 'og:title', content: 'jdhillen.com - Home' },
         { name: 'og:description', content: 'This is the description for the Home page' },
         { name: 'og:image', content: 'https://via.placeholder.com/1500x780' }
