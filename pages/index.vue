@@ -23,7 +23,9 @@ export default {
 
   head() {
     return {
-      title: 'Home Page'
+      title: 'Home',
+      description: 'This is the description for the Home page',
+      image: 'https://via.placeholder.com/1500x780'
     }
   },
 

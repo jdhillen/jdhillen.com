@@ -442,7 +442,9 @@ export default {
 
   head() {
     return {
-      title: 'Style Guide'
+      title: 'Style Guide',
+      description: 'This is the description for the Style Guide page',
+      image: 'https://via.placeholder.com/1500x780'
     }
   },
 
