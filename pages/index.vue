@@ -25,31 +25,11 @@ export default {
     return {
       title: 'Home',
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'This is the description for the Home page'
-        },
-        {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'website'
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: 'jdhillen.com - Home'
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'This is the description for the Home page'
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: 'https://via.placeholder.com/1500x780'
-        }
+        { name: 'description', content: 'This is the description for the Home page' },
+        { name: 'og:type', content: 'website' },
+        { name: 'og:title', content: 'jdhillen.com - Home' },
+        { name: 'og:description', content: 'This is the description for the Home page' },
+        { name: 'og:image', content: 'https://via.placeholder.com/1500x780' }
       ]
     }
   },
