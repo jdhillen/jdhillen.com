@@ -61,8 +61,6 @@ export default {
   head() {
     return {
       title: 'About',
-      description: 'This is the description for the About page',
-      image: 'https://via.placeholder.com/1500x780'
     }
   },
 

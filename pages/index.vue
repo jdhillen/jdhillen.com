@@ -24,8 +24,33 @@ export default {
   head() {
     return {
       title: 'Home',
-      description: 'This is the description for the Home page',
-      image: 'https://via.placeholder.com/1500x780'
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'This is the description for the Home page'
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'jdhillen.com - Home'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'This is the description for the Home page'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://via.placeholder.com/1500x780'
+        }
+      ]
     }
   },
 
