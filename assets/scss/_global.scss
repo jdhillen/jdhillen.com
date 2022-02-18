@@ -1,0 +1,55 @@
+// =================================================================================================
+// ---- Globals ----
+// =================================================================================================
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  -webkit-user-drag: none;
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: 'Open Sans Regular';
+  font-size: 14px;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  @extend .smooth;
+}
+
+html {
+  background-color: black(0.02);
+  background-image: url('~/assets/img/layout/bg.png');
+  background-repeat: repeat;
+}
+
+a {
+  text-decoration: none;
+}
+
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
+.page {
+  flex: auto;
+  margin: 35px 0 25px 0;
+}
+
+// ==|== Disable Click Events ======================================================================
+.disable-click {
+  pointer-events: none;
+  cursor: default;
+}
+
+// ==|== Disable Tap Highlight======================================================================
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}

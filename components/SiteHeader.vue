@@ -1,14 +1,9 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page home">
-    <div class="container">
-      <div class="row">
-        <div class="twelve columns">
-          <h1>Home Page</h1>
-        </div>
-      </div>
-    </div>
-  </section>
+  <nav>
+    <NuxtLink to="/">Home</NuxtLink>
+    <NuxtLink to="/about">About</NuxtLink>
+  </nav>
 </template>
 
 <!--|== Scripts ================================================================================ -->
@@ -19,8 +14,4 @@ export default {
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.home {
-
-}
-
 </style>

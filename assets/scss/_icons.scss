@@ -1,0 +1,19 @@
+// =================================================================================================
+// ---- icons ----
+// =================================================================================================
+
+.icon {
+  position: relative;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &__vue {
+    width: 12px;
+    height: 10px;
+    top: 2px;
+    right: 2px;
+    background-image: url('./assets/img/icons/vuejs.svg');
+  }
+}

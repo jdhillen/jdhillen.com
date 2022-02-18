@@ -1,26 +1,27 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page home">
-    <div class="container">
-      <div class="row">
-        <div class="twelve columns">
-          <h1>Home Page</h1>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="app">
+    <SiteHeader/>
+    <Nuxt/>
+    <SiteFooter/>
+  </div>
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script>
+import SiteHeader from "../components/SiteHeader.vue";
+import SiteFooter from "../components/SiteFooter.vue";
 export default {
+    components: { SiteHeader, SiteFooter },
+    layout: "default"
 }
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.home {
-
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
 </style>
