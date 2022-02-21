@@ -8,12 +8,39 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  width: 25px;
+    height: 25px;
 
-  &__vue {
+  &__nuxt {
     width: 12px;
     height: 10px;
     top: 2px;
     right: 2px;
-    background-image: url('./assets/img/icons/vuejs.svg');
+    background-image: url('./assets/img/icons/nuxt.svg');
   }
+
+  &__github {
+    background-image: url('./assets/img/icons/github.svg');
+  }
+  
+  &__linkedin {
+    background-image: url('./assets/img/icons/linkedin.svg');
+  }
+
+  &__facebook {
+    background-image: url('./assets/img/icons/facebook.svg');
+  }
+
+  &__twitter {
+    background-image: url('./assets/img/icons/twitter.svg');
+  }
+
+  &__instagram {
+    background-image: url('./assets/img/icons/instagram.svg');
+  }
+
+  &__email {
+    background-image: url('./assets/img/icons/email.svg');
+  }
+  
 }

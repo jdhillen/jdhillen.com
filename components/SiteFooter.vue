@@ -1,14 +1,34 @@
 <!--|== Template =============================================================================== -->
 <template>
   <footer class="footer">
+    <div class="footer__social">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <ul v-if="social">
+              <li v-for="item in social">
+                <a :href="item.url" target="_blank" :alt="item.name">
+                  <div class="icon" :class="['icon__' + item.icon]"/>
+                </a>
+              </li>
+              <li v-if="contact">
+                <a :href="'mailto:' + contact.email + '?subject=Hello'">
+                  <div class="icon icon__email"/>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="footer__copyright">
       <div class="container">
         <div class="row">
           <div class="twelve columns">
             <div class="footer__copyright--txt">
               Made with
-              <a href="https://vuejs.org/" target="_blank">
-                <div class="icon icon__vue"></div>
+              <a href="https://nuxtjs.org" target="_blank">
+                <div class="icon icon__nuxt"></div>
               </a>
               by J.D. Hillen
             </div>
@@ -22,6 +42,17 @@
 <!--|== Scripts ================================================================================ -->
 <script>
 export default {
+  data() {
+    return {
+      social: {},
+      contact: {}
+    };
+  },
+
+  async fetch() {
+    this.social = await fetch('https://www.jdhillen.io/api/links/social/').then(res => res.json())
+    this.contact = await fetch('https://www.jdhillen.io/api/resume/contact/1/').then(res => res.json())
+  }
 }
 </script>
 
@@ -44,6 +75,7 @@ export default {
 
       li {
         padding: 0 10px;
+        margin: 0;
         display: inline;
 
         a {
