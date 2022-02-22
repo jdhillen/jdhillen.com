@@ -7,14 +7,10 @@
           <div class="twelve columns">
             <ul v-if="social">
               <li v-for="item in social">
-                <a :href="item.url" target="_blank" :alt="item.name">
-                  <div class="icon" :class="['icon__' + item.icon]"/>
-                </a>
+                <a :href="item.url" target="_blank" :alt="item.name" class="icon" :class="['icon__' + item.icon]"></a>
               </li>
               <li v-if="contact">
-                <a :href="'mailto:' + contact.email + '?subject=Hello'">
-                  <div class="icon icon__email"/>
-                </a>
+                <a :href="'mailto:' + contact.email + '?subject=Hello'" class="icon icon__email"></a>
               </li>
             </ul>
           </div>
@@ -27,9 +23,7 @@
           <div class="twelve columns">
             <div class="footer__copyright--txt">
               Made with
-              <a href="https://nuxtjs.org" target="_blank">
-                <div class="icon icon__nuxt"></div>
-              </a>
+              <a href="https://nuxtjs.org" target="_blank" class="icon icon__nuxt"></a>
               by J.D. Hillen
             </div>
           </div>
@@ -65,18 +59,21 @@ export default {
 
   &__social {
     text-align: center;
-    padding: 10px 0;
+    padding: 25px 0;
     background-color: black(0.7);
 
     ul {
-      margin: 0;
+      max-width: 500px;
+      margin: 0 auto;
       padding: 0;
       list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
 
       li {
-        padding: 0 10px;
-        margin: 0;
-        display: inline;
+        display: flex;
 
         a {
           color: white(0.75);
