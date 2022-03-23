@@ -54,3 +54,9 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
+
+// ==|== Bokeh Effect ==============================================================================
+.bokeh {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
