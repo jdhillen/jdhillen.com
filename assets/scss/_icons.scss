@@ -9,7 +9,11 @@
   background-position: center center;
   background-size: cover;
   width: 25px;
-    height: 25px;
+  height: 25px;
+
+  &__social {
+    filter: drop-shadow(2px 2px 3px black(0.2)) 
+  }
 
   &__nuxt {
     width: 12px;
@@ -39,8 +43,11 @@
     background-image: url('./assets/img/icons/instagram.svg');
   }
 
+  &__youtube {
+    background-image: url('./assets/img/icons/youtube.svg');
+  }
+
   &__email {
     background-image: url('./assets/img/icons/email.svg');
   }
-  
 }
