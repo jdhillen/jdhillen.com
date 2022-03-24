@@ -3,8 +3,7 @@
   <section class="page home">
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
-          <h1>Home</h1>
+        <div class="twelve columns" v-html="data.body_rendered">
         </div>
       </div>
     </div>
@@ -15,6 +14,12 @@
 <script>
 export default {
 
+  async asyncData({ $axios }) {
+    let response = await $axios.$get('https://www.jdhillen.io/api/pages/?slug=home');
+    let data = response[0];
+    return { data };
+  },
+
   name: "index-page",
 
   props: {},
@@ -23,19 +28,19 @@ export default {
 
   head() {
     return {
-      title: 'J.D. Hillen - Home',
+      title: `J.D. Hillen - ${this.data.name}`,
       meta: [
-        { name: 'description', content: 'This is the description for the Home page' },
+        { name: 'description', content: this.data.description },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://jdhillen.com' },
-        { name: 'og:title', content: 'J.D. Hillen - Interactive Developer' },
-        { name: 'og:description', content: 'This is the description for the Home page' },
-        { name: 'og:image', content: 'https://via.placeholder.com/1500x780' },
+        { name: 'og:title', content: `J.D. Hillen - ${this.data.name}` },
+        { name: 'og:description', content: this.data.description },
+        { name: 'og:image', content: this.data.image },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://jdhillen.com' },
-        { name: 'twitter:title', content: 'J.D. Hillen - Interactive Developer' },
-        { name: 'twitter:description', content: 'This is the description for the Home page' },
-        { name: 'twitter:image', content: 'https://via.placeholder.com/1500x780' }
+        { name: 'twitter:title', content: `J.D. Hillen - ${this.data.name}` },
+        { name: 'twitter:description', content: this.data.description },
+        { name: 'twitter:image', content: this.data.image }
       ]
     }
   },
@@ -43,6 +48,8 @@ export default {
   data() {
     return {};
   },
+
+  
 
   beforeCreate() {},
 
