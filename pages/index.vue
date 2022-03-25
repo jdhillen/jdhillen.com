@@ -3,9 +3,7 @@
   <section class="page home">
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
-          <h1>Home</h1>
-        </div>
+        <div class="twelve columns" v-html="data.body_rendered"/>
       </div>
     </div>
   </section>
@@ -13,7 +11,15 @@
 
 <!--|== Scripts ================================================================================ -->
 <script>
+import Meta from '@/mixins/Meta';
+
 export default {
+
+  async asyncData({ route, $axios }) {
+    let response = await $axios.$get(`/pages/?slug=${route.name}`);
+    let data = response[0];
+    return { data };
+  },
 
   name: "index-page",
 
@@ -21,29 +27,14 @@ export default {
 
   components: {},
 
-  head() {
-    return {
-      title: 'J.D. Hillen - Home',
-      meta: [
-        { name: 'description', content: 'This is the description for the Home page' },
-        { name: 'og:type', content: 'website' },
-        { name: 'og:url', content: 'https://jdhillen.com' },
-        { name: 'og:title', content: 'J.D. Hillen - Interactive Developer' },
-        { name: 'og:description', content: 'This is the description for the Home page' },
-        { name: 'og:image', content: 'https://via.placeholder.com/1500x780' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:url', content: 'https://jdhillen.com' },
-        { name: 'twitter:title', content: 'J.D. Hillen - Interactive Developer' },
-        { name: 'twitter:description', content: 'This is the description for the Home page' },
-        { name: 'twitter:image', content: 'https://via.placeholder.com/1500x780' }
-      ]
-    }
-  },
+  mixins: [Meta],
 
   data() {
-    return {};
+    return {
+      pageName: 'Home',
+    };
   },
-
+  
   beforeCreate() {},
 
   created() {},
