@@ -18,21 +18,27 @@
 
 <!--|== Scripts ================================================================================ -->
 <script>
+import Meta from '@/mixins/Meta';
+
 export default {
+  async asyncData({ route, $axios }) {
+    let response = await $axios.$get(`/pages/?slug=${route.name}`);
+    let data = response[0];
+    return { data };
+  },
+
   name: "uses-page",
 
   props: {},
 
   components: {},
 
-  head() {
-    return {
-      title: 'Uses',
-    }
-  },
+  mixins: [Meta],
 
   data() {
-    return {};
+    return {
+      pageName: 'Uses',
+    };
   },
 
   beforeCreate() {},
