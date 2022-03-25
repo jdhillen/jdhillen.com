@@ -17,14 +17,12 @@
       <div class="nav__desktop">
         <NuxtLink to="/about">About</NuxtLink>
         <NuxtLink to="/uses">Uses</NuxtLink>
-        <NuxtLink to="/work">Work</NuxtLink>
       </div>
     </div>
     <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleNav()" />
     <div ref="mobileNav" class="nav__mobile bokeh">
       <NuxtLink to="/about" @click.native="toggleNav()">About</NuxtLink>
       <NuxtLink to="/uses" @click.native="toggleNav()">Uses</NuxtLink>
-      <NuxtLink to="/work" @click.native="toggleNav()">Work</NuxtLink>
     </div>
   </nav>
 </template>
