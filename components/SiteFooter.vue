@@ -71,11 +71,17 @@ export default {
       list-style-type: none;
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
 
       li {
         display: flex;
+        margin: 10px;
+
+        @media screen and (max-width: 400px) {
+          margin: 10px 20px;
+        }
 
         a {
           color: white(0.75);
