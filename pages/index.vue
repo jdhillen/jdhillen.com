@@ -11,18 +11,15 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-// import Meta from '@/mixins/Meta';
-
-// async asyncData({ route, $axios }) {
-//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
-//   let data = response[0];
-//   return { data };
-// },
+const route = useRoute()
+const config = useRuntimeConfig()
+const { data } = await useFetch(() => `pages/?slug=${route.name}`, { baseURL: config.apiBase });
+data.value = data.value[0];
 
 const pageName = 'Home';
-const data = {
-  body_rendered: 'Home',
-}
+
+//setHead(pageName, data);
+
 </script>
 
 <!--|== CSS ==================================================================================== -->

@@ -13,16 +13,9 @@
 <script setup>
 // import Meta from '@/mixins/Meta';
 
-// async asyncData({ route, $axios }) {
-//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
-//   let data = response[0];
-//   return { data };
-// },
+const { data } = await useFetch(`/pages/?slug=${route.name}`)
 
 const pageName = 'About';
-const data = {
-  body_rendered: 'About',
-}
 </script>
 
 <!--|== CSS ==================================================================================== -->
