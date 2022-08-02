@@ -1,12 +1,5 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <nav>
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-  </nav>
-</template>
-
-<template>
   <nav id="nav" class="nav">
     <div class="nav__main">
       <div class="nav__logo">
@@ -28,50 +21,13 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-import Hamburger from '@/components/Hamburger.vue';
+<script setup>
+const mobileNav = ref(null);
+const hamburger = ref(null);
 
-export default {
-  name: 'site-header',
-
-  props: {},
-
-  components: {
-    Hamburger
-  },
-
-  data() {
-    return {
-      toggle: false
-    };
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeUnmount() {},
-
-  unmounted() {},
-
-  computed: {},
-
-  methods: {
-    toggleNav() {
-      this.$refs.mobileNav.classList.toggle('active');
-      this.$refs.hamburger.toggle();
-    }
-  },
-
-  watch: {}
+function toggleNav() {
+  mobileNav.classList.toggle('active');
+  hamburger.toggle();
 };
 </script>
 
@@ -106,7 +62,7 @@ export default {
     &--img {
       width: 30px;
       height: 30px;
-      background-image: url('./assets/img/logos/square.svg');
+      background-image: url('@/assets/img/logos/square.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;

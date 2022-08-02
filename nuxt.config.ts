@@ -1,4 +1,7 @@
-export default {
+import { defineNuxtConfig } from 'nuxt'
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -27,38 +30,27 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/scss/vendor/_normalize.scss',
-    '~/assets/scss/vendor/_skeleton.scss'
+    '@/assets/scss/vendor/_normalize.scss',
+    '@/assets/scss/vendor/_skeleton.scss'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  runtimeConfig: {
+    apiBase: '',
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/style-resources'
-  ],
-
-  styleResources: {
-    scss: [
-      '~/assets/scss/main.scss',
-    ]
+  components: {
+    global: true,
+    dirs: ['@/components'],
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios',
-  ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: process.env.API_BASE,
+  vite: {
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: '@import "@/assets/scss/main.scss";',
+            },
+        },
+    },
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-}
+})

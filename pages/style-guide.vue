@@ -229,12 +229,6 @@
           <section id="embedded-canvas">
               <h2>Canvas</h2>
               <canvas id="myCanvas">Your browser does not support canvas.</canvas>
-              <script>
-                  var c = document.getElementById("myCanvas");
-                  var ctx = c.getContext("2d");
-                  ctx.fillStyle = "#FF0000";
-                  ctx.fillRect(0, 0, 300, 250);
-              </script>
           </section>
 
 
@@ -431,48 +425,19 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
+<script setup>
+// import Meta from '@/mixins/Meta';
 
-  name: "style-guide-page",
+// async asyncData({ route, $axios }) {
+//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
+//   let data = response[0];
+//   return { data };
+// },
 
-  props: {},
-
-  components: {},
-
-  head() {
-    return {
-      title: 'Style Guide',
-    }
-  },
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
+const pageName = 'Style-Guide';
+const data = {
+  body_rendered: 'Test',
+}
 </script>
 
 <!--|== CSS ==================================================================================== -->

@@ -12,47 +12,19 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: "work-page",
+<script setup>
+// import Meta from '@/mixins/Meta';
 
-  props: {},
+// async asyncData({ route, $axios }) {
+//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
+//   let data = response[0];
+//   return { data };
+// },
 
-  components: {},
-
-  head() {
-    return {
-      title: 'Work',
-    }
-  },
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
+const pageName = 'Work';
+const data = {
+  body_rendered: 'Test',
+}
 </script>
 
 <!--|== CSS ==================================================================================== -->

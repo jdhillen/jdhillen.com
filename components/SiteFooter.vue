@@ -34,22 +34,10 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: 'site-header',
-  
-  data() {
-    return {
-      social: {},
-      contact: {}
-    };
-  },
-
-  async fetch() {
-    this.social = await fetch('https://www.jdhillen.io/api/links/social/').then(res => res.json())
-    this.contact = await fetch('https://www.jdhillen.io/api/resume/contact/1/').then(res => res.json())
-  }
-}
+<script setup>
+const { social } = await useFetch('https://www.jdhillen.io/api/links/social/');
+console.log(social);
+const { contact } = await useFetch('https://www.jdhillen.io/api/resume/contact/1/');
 </script>
 
 <!--|== CSS ==================================================================================== -->

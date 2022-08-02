@@ -10,53 +10,19 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-import Meta from '@/mixins/Meta';
+<script setup>
+// import Meta from '@/mixins/Meta';
 
-export default {
-  async asyncData({ route, $axios }) {
-    let response = await $axios.$get(`/pages/?slug=${route.name}`);
-    let data = response[0];
-    return { data };
-  },
+// async asyncData({ route, $axios }) {
+//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
+//   let data = response[0];
+//   return { data };
+// },
 
-  name: "uses-page",
-
-  props: {},
-
-  components: {},
-
-  mixins: [Meta],
-
-  data() {
-    return {
-      pageName: 'Uses',
-    };
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
+const pageName = 'Uses';
+const data = {
+  body_rendered: 'Uses',
+}
 </script>
 
 <!--|== CSS ==================================================================================== -->

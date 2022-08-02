@@ -8,43 +8,11 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: 'hamburger',
+<script setup>
+const ham = ref(null);
 
-  props: {},
-
-  components: {},
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeUnmount() {},
-
-  unmounted() {},
-
-  computed: {},
-
-  methods: {
-    toggle() {
-      this.$refs.ham.classList.toggle('active');
-    }
-  },
-
-  watch: {}
+function toggle() {
+  ham.classList.toggle('active');
 };
 </script>
 
