@@ -3,7 +3,7 @@
   <main class="app">
     <SiteHeader/>
     <NuxtPage />
-    <SiteFooter/>
+    <!-- <SiteFooter /> -->
   </main>
 </template>
 

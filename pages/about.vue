@@ -11,11 +11,13 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-// import Meta from '@/mixins/Meta';
+const route = useRoute()
+const config = useRuntimeConfig()
+const { data } = await useFetch(() => `pages/?slug=${route.name}`, { baseURL: config.apiBase });
+data.value = data.value[0];
 
-const { data } = await useFetch(`/pages/?slug=${route.name}`)
-
-const pageName = 'About';
+const metaData = getMetaData('Home', data.value);
+useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->

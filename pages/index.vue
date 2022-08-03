@@ -16,10 +16,8 @@ const config = useRuntimeConfig()
 const { data } = await useFetch(() => `pages/?slug=${route.name}`, { baseURL: config.apiBase });
 data.value = data.value[0];
 
-const pageName = 'Home';
-
-//setHead(pageName, data);
-
+const metaData = getMetaData('Home', data.value);
+useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
