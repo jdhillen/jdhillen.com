@@ -12,8 +12,8 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute()
-const config = useRuntimeConfig()
-const { data } = await useFetch(() => `pages/?slug=${route.name}`, { baseURL: config.apiBase });
+const { apiBase } = useRuntimeConfig()
+const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
 data.value = data.value[0];
 
 const metaData = getMetaData('Home', data.value);
@@ -22,8 +22,5 @@ useHead(metaData);
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.home {
-
-}
-
+.home {}
 </style>

@@ -425,25 +425,9 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script setup>
-// import Meta from '@/mixins/Meta';
-
-// async asyncData({ route, $axios }) {
-//   let response = await $axios.$get(`/pages/?slug=${route.name}`);
-//   let data = response[0];
-//   return { data };
-// },
-
-const pageName = 'Style-Guide';
-const data = {
-  body_rendered: 'Test',
-}
-</script>
+<script setup></script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.style-guide {
-
-}
-
+.style-guide {}
 </style>

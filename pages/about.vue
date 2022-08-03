@@ -12,16 +12,15 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute()
-const config = useRuntimeConfig()
-const { data } = await useFetch(() => `pages/?slug=${route.name}`, { baseURL: config.apiBase });
+const { apiBase } = useRuntimeConfig()
+const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
 data.value = data.value[0];
 
-const metaData = getMetaData('Home', data.value);
+const metaData = getMetaData('About', data.value);
 useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.about {
-}
+.about {}
 </style>
