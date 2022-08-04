@@ -1,6 +1,5 @@
-export default function getMetaData(pageName, data) {
+export default function getMetaData(pageName, meta) {
   const route = useRoute()
-  const meta = data[0];
   return {
     title: `J.D. Hillen - ${pageName}`,
     htmlAttrs: {
