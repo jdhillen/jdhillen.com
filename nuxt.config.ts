@@ -32,12 +32,12 @@ export default defineNuxtConfig({
       { name: 'theme-color', content: '#FFFFFF'},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/static/favicon.ico' },
-      { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/static/apple-touch-icon.png'},
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/static/favicon-32x32.png'},
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/static/favicon-16x16.png'},
-      { rel: 'manifest', href: '/static/site.webmanifest'},
-      { rel: 'mask-icon', color: '#333333', href: '/static/safari-pinned-tab.svg'},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', type: 'image/png', sizes: '180x180', href: '/apple-touch-icon.png'},
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'},
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'},
+      { rel: 'manifest', href: '/site.webmanifest'},
+      { rel: 'mask-icon', color: '#333333', href: '/safari-pinned-tab.svg'},
       { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css' }
     ],
     script: [
