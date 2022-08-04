@@ -16,7 +16,7 @@ const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
 
 const metaData = getMetaData('Home', data.value);
-console.log('outside', metaData);
+console.log(metaData);
 // useHead(metaData);
 
 // onMounted(() => {
