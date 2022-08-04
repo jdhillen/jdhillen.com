@@ -12,51 +12,17 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: "work-page",
+<script setup>
+const route = useRoute()
+const { apiBase } = useRuntimeConfig()
+const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
+data.value = data.value[0];
 
-  props: {},
-
-  components: {},
-
-  head() {
-    return {
-      title: 'Work',
-    }
-  },
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
+const metaData = getMetaData('Work', data.value);
+useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.work {
-}
+.work {}
 </style>

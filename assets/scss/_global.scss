@@ -1,3 +1,4 @@
+
 // =================================================================================================
 // ---- Globals ----
 // =================================================================================================
@@ -12,15 +13,18 @@
 html,
 body {
   width: 100%;
-  min-width: 300px;
   height: 100%;
   box-sizing: border-box;
   font-family: 'Open Sans Regular';
-  font-size: 14px;
   font-style: normal;
+  font-size: 14px;
   margin: 0;
   padding: 0;
   @extend .smooth;
+
+  @media (min-width: 750px) {
+    font-size: 16px
+  }
 }
 
 html {
@@ -40,7 +44,20 @@ a {
 
 .page {
   flex: auto;
-  margin: 35px 0 25px 0;
+  padding: 3rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans Bold';
+}
+
+.hljs {
+  background-color: black(0.7) !important;
 }
 
 // ==|== Disable Click Events ======================================================================

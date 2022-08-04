@@ -7,7 +7,7 @@
           <div class="twelve columns">
             <ul v-if="social">
               <li v-for="item in social">
-                <a :href="item.url" target="_blank" :alt="item.name" class="icon icon__social" :class="['icon__' + item.icon]"></a>
+                <a :href="item.url" target="_blank" :alt="item.name" rel="noopener noreferrer" class="icon icon__social" :class="['icon__' + item.icon]"></a>
               </li>
               <li v-if="contact">
                 <a :href="'mailto:' + contact.email + '?subject=Hello'" class="icon icon__social icon__email"></a>
@@ -24,7 +24,7 @@
             <div class="footer__copyright--txt">
               Made with
               <a href="https://nuxtjs.org" target="_blank" class="icon icon__nuxt"></a>
-              by J.D. Hillen
+              by {{ contact.name }}
             </div>
           </div>
         </div>
@@ -34,22 +34,10 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: 'site-header',
-  
-  data() {
-    return {
-      social: {},
-      contact: {}
-    };
-  },
-
-  async fetch() {
-    this.social = await fetch('https://www.jdhillen.io/api/links/social/').then(res => res.json())
-    this.contact = await fetch('https://www.jdhillen.io/api/resume/contact/1/').then(res => res.json())
-  }
-}
+<script setup>
+const { apiBase } = useRuntimeConfig()
+const { data: social } = await useFetch(`${apiBase}/links/social/`);
+const { data: contact } = await useFetch(`${apiBase}/resume/contact/1/`);
 </script>
 
 <!--|== CSS ==================================================================================== -->
