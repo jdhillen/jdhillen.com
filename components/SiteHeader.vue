@@ -12,23 +12,33 @@
         <NuxtLink to="/uses">Uses</NuxtLink>
       </div>
     </div>
-    <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleNav()" />
-    <div ref="mobileNav" class="nav__mobile bokeh">
-      <NuxtLink to="/about" @click.native="toggleNav()">About</NuxtLink>
-      <NuxtLink to="/uses" @click.native="toggleNav()">Uses</NuxtLink>
+    <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleMobileNav"/>
+    <div ref="mobileNav" class="nav__mobile bokeh" :class="{ active: isActive }">
+      <NuxtLink to="/about" @click.native="toggleMobileNav">About</NuxtLink>
+      <NuxtLink to="/uses" @click.native="toggleMobileNav">Uses</NuxtLink>
     </div>
   </nav>
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const mobileNav = ref(null);
+const isActive = ref(false);
 const hamburger = ref(null);
 
-function toggleNav() {
-  mobileNav.classList.toggle('active');
-  hamburger.toggle();
+function toggleMobileNav() {
+  isActive.value = !isActive.value
+  hamburger.value.toggleHamburger();
 };
+
+function windowResized() {
+  if (window.innerWidth > 750 && isActive.value === true) {
+    toggleMobileNav();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("resize", windowResized);
+});
 </script>
 
 <!--|== CSS ==================================================================================== -->

@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div ref="ham" class="ham">
+  <div ref="ham" class="ham" :class="{active: isActive}">
     <span></span>
     <span></span>
     <span></span>
@@ -9,11 +9,13 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const ham = ref(null);
+const isActive = ref(false);
 
-function toggle() {
-  ham.classList.toggle('active');
+function toggleHamburger() {
+  isActive.value = !isActive.value;
 };
+
+defineExpose({ toggleHamburger });
 </script>
 
 <!--|== CSS ==================================================================================== -->
