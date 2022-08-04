@@ -14,7 +14,7 @@
 const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-const content = data.value[0];
+const content = data.value?.[0];
 const meta = {
   name: 'Home',
   desc: content.description,
