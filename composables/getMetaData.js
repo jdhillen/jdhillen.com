@@ -6,18 +6,18 @@ export default function getMetaData(meta) {
       lang: 'en',
     },
     meta: [
-      { name: 'description', content: meta.description },
+      { name: 'description', content: meta.desc },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: `https://jdhillen.com${route.fullPath}` },
       { name: 'og:title', content: `J.D. Hillen - ${meta.name}` },
-      { name: 'og:description', content: meta.description },
+      { name: 'og:description', content: meta.desc },
       { name: 'og:image', content: meta.img },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@jdhillen' },
       { name: 'twitter:creator', content: '@jdhillen' },
       { name: 'twitter:url', content: `https://jdhillen.com${route.fullPath}` },
       { name: 'twitter:title', content: `J.D. Hillen - ${meta.name}` },
-      { name: 'twitter:description', content: meta.description },
+      { name: 'twitter:description', content: meta.desc },
       { name: 'twitter:image', content: meta.img }
     ]
   };
