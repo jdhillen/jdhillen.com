@@ -15,10 +15,8 @@ const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
 
-console.log(data.value[0]);
-
-const metaData = getMetaData('Home', data.value[0]);
-useHead(metaData);
+// const metaData = getMetaData('Home', data.value[0]);
+// useHead(metaData);
 
 // onMounted(() => {
 //   hljs.highlightAll();
