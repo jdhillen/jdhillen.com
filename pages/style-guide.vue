@@ -186,19 +186,19 @@
 
               <div>
                   <p>No <code>&lt;figure&gt;</code> element</p>
-                  <img src="http://placehold.it/350x350" alt="Image alt text">
+                  <img src="https://placehold.it/350x350" alt="Image alt text">
               </div>
 
               <div>
                   <p>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></p>
                   <figure>
-                      <img src="http://placehold.it/350x350" alt="Image alt text">
+                      <img src="https://placehold.it/350x350" alt="Image alt text">
                   </figure>
               </div>
               <div>
                   <p>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></p>
                   <figure>
-                      <img src="http://placehold.it/350x350" alt="Image alt text">
+                      <img src="https://placehold.it/350x350" alt="Image alt text">
                       <figcaption>Here is a caption for this image.</figcaption>
                   </figure>
               </div>
@@ -218,9 +218,9 @@
           <section id="embedded-video">
               <h2>Video</h2>
               <video controls="">
-                  <source src="http://html5demos.com/assets/dizzy.mp4" type="video/mp4">
-                  <source src="http://html5demos.com/assets/dizzy.webm" type="video/webm">
-                  <source src="http://html5demos.com/assets/dizzy.ogv" type="video/ogg">
+                  <source src="https://html5demos.com/assets/dizzy.mp4" type="video/mp4">
+                  <source src="https://html5demos.com/assets/dizzy.webm" type="video/webm">
+                  <source src="https://html5demos.com/assets/dizzy.ogv" type="video/ogg">
                   Your browser does not support the video tag.
               </video>
           </section>
@@ -254,7 +254,7 @@
 
           <section id="embedded-iframe">
               <h2>iFrame</h2>
-              <iframe src="http://www.w3schools.com">Your browser does not support iframes.</iframe>
+              <iframe src="https://www.w3schools.com">Your browser does not support iframes.</iframe>
           </section>
 
 
@@ -271,7 +271,7 @@
                       <input id="input-password" type="password" placeholder="Type your Password">
 
                       <label for="input-webaddress">Web Address</label>
-                      <input id="input-webaddress" type="url" placeholder="http://yoursite.com">
+                      <input id="input-webaddress" type="url" placeholder="https://yoursite.com">
 
                       <label for="input-emailaddress">Email Address</label>
                       <input id="input-emailaddress" type="email" placeholder="name@email.com">
