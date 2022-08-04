@@ -1,31 +1,26 @@
 export default function getMetaData(pageName, data) {
   const route = useRoute()
-  const description = ref(data[0].description);
-  const image = ref(data[0].image);
+  const description = data[0].description;
+  const image = data[0].image;
   return {
     title: `J.D. Hillen - ${pageName}`,
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
-      { name: 'description', content: description.value },
+      { name: 'description', content: description },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: `https://jdhillen.com${route.fullPath}` },
       { name: 'og:title', content: `J.D. Hillen - ${pageName}` },
-      { name: 'og:description', content: description.value },
-      { name: 'og:image', content: image.value },
+      { name: 'og:description', content: description },
+      { name: 'og:image', content: image },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@jdhillen' },
       { name: 'twitter:creator', content: '@jdhillen' },
       { name: 'twitter:url', content: `https://jdhillen.com${route.fullPath}` },
       { name: 'twitter:title', content: `J.D. Hillen - ${pageName}` },
-      { name: 'twitter:description', content: description.value },
-      { name: 'twitter:image', content: image.value }
+      { name: 'twitter:description', content: description },
+      { name: 'twitter:image', content: image }
     ]
   }
 };
-
-
-
-
-    
