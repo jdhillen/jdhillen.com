@@ -3,7 +3,7 @@
   <section class="page home">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-html="data[0].body_rendered"/>
+        <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
       </div>
     </div>
   </section>
