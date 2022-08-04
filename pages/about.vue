@@ -3,7 +3,7 @@
   <section class="page about">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-html="data.body_rendered"/>
+        <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
       </div>
     </div>
   </section>
@@ -14,9 +14,12 @@
 const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-data.value = data.value[0];
-
-const metaData = getMetaData('About', data.value);
+const meta = {
+  name: 'Home',
+  desc: data.value?.[0].description,
+  img: data.value?.[0].image
+}
+const metaData = getMetaData(meta);
 useHead(metaData);
 </script>
 
