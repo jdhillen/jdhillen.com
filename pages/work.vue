@@ -13,13 +13,13 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const route = useRoute()
-const { apiBase } = useRuntimeConfig()
-const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-data.value = data.value[0];
+// const route = useRoute()
+// const { apiBase } = useRuntimeConfig()
+// const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
+// data.value = data.value[0];
 
-const metaData = getMetaData('Work', data.value);
-useHead(metaData);
+// const metaData = getMetaData('Work', data.value);
+// useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
