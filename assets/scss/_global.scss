@@ -56,6 +56,10 @@ h6 {
   font-family: 'Open Sans Bold';
 }
 
+.hljs {
+  background-color: black(0.7) !important;
+}
+
 // ==|== Disable Click Events ======================================================================
 .disable-click {
   pointer-events: none;

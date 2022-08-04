@@ -82,7 +82,10 @@ onMounted(() => {
 
   &__desktop {
     flex: 1;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 
     @media (max-width: 750px) {
       visibility: hidden;

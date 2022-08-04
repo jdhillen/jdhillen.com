@@ -18,6 +18,10 @@ data.value = data.value[0];
 
 const metaData = getMetaData('Home', data.value);
 useHead(metaData);
+
+// onMounted(() => {
+//   hljs.highlightAll();
+// });
 </script>
 
 <!--|== CSS ==================================================================================== -->
