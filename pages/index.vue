@@ -3,7 +3,7 @@
   <section class="page home">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="content" v-html="content.body_rendered"/>
+        <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
       </div>
     </div>
   </section>
@@ -14,15 +14,13 @@
 const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-const content = data.value?.[0];
 const meta = {
   name: 'Home',
-  desc: content.description,
-  img: content.image
+  desc: data.value?.[0].description,
+  img: data.value?.[0].image
 }
 const metaData = getMetaData(meta);
-console.log(metaData);
-// useHead(metaData);
+useHead(metaData);
 
 // onMounted(() => {
 //   hljs.highlightAll();
