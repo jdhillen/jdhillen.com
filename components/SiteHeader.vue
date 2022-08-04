@@ -1,12 +1,5 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <nav>
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-  </nav>
-</template>
-
-<template>
   <nav id="nav" class="nav">
     <div class="nav__main">
       <div class="nav__logo">
@@ -19,60 +12,33 @@
         <NuxtLink to="/uses">Uses</NuxtLink>
       </div>
     </div>
-    <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleNav()" />
-    <div ref="mobileNav" class="nav__mobile bokeh">
-      <NuxtLink to="/about" @click.native="toggleNav()">About</NuxtLink>
-      <NuxtLink to="/uses" @click.native="toggleNav()">Uses</NuxtLink>
+    <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleMobileNav"/>
+    <div ref="mobileNav" class="nav__mobile bokeh" :class="{ active: isActive }">
+      <NuxtLink to="/about" @click.native="toggleMobileNav">About</NuxtLink>
+      <NuxtLink to="/uses" @click.native="toggleMobileNav">Uses</NuxtLink>
     </div>
   </nav>
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-import Hamburger from '@/components/Hamburger.vue';
+<script setup>
+const isActive = ref(false);
+const hamburger = ref(null);
 
-export default {
-  name: 'site-header',
-
-  props: {},
-
-  components: {
-    Hamburger
-  },
-
-  data() {
-    return {
-      toggle: false
-    };
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeUnmount() {},
-
-  unmounted() {},
-
-  computed: {},
-
-  methods: {
-    toggleNav() {
-      this.$refs.mobileNav.classList.toggle('active');
-      this.$refs.hamburger.toggle();
-    }
-  },
-
-  watch: {}
+function toggleMobileNav() {
+  isActive.value = !isActive.value
+  hamburger.value.toggleHamburger();
 };
+
+function windowResized() {
+  if (window.innerWidth > 750 && isActive.value === true) {
+    toggleMobileNav();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("resize", windowResized);
+});
 </script>
 
 <!--|== CSS ==================================================================================== -->
@@ -106,7 +72,7 @@ export default {
     &--img {
       width: 30px;
       height: 30px;
-      background-image: url('./assets/img/logos/square.svg');
+      background-image: url('@/assets/img/logos/square.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -116,7 +82,10 @@ export default {
 
   &__desktop {
     flex: 1;
-    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 
     @media (max-width: 750px) {
       visibility: hidden;

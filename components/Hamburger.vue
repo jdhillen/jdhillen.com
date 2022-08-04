@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div ref="ham" class="ham">
+  <div ref="ham" class="ham" :class="{active: isActive}">
     <span></span>
     <span></span>
     <span></span>
@@ -8,44 +8,14 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-  name: 'hamburger',
+<script setup>
+const isActive = ref(false);
 
-  props: {},
-
-  components: {},
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeUnmount() {},
-
-  unmounted() {},
-
-  computed: {},
-
-  methods: {
-    toggle() {
-      this.$refs.ham.classList.toggle('active');
-    }
-  },
-
-  watch: {}
+function toggleHamburger() {
+  isActive.value = !isActive.value;
 };
+
+defineExpose({ toggleHamburger });
 </script>
 
 <!--|== CSS ==================================================================================== -->

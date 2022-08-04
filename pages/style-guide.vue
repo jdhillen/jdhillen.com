@@ -229,12 +229,6 @@
           <section id="embedded-canvas">
               <h2>Canvas</h2>
               <canvas id="myCanvas">Your browser does not support canvas.</canvas>
-              <script>
-                  var c = document.getElementById("myCanvas");
-                  var ctx = c.getContext("2d");
-                  ctx.fillStyle = "#FF0000";
-                  ctx.fillRect(0, 0, 300, 250);
-              </script>
           </section>
 
 
@@ -431,54 +425,9 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-export default {
-
-  name: "style-guide-page",
-
-  props: {},
-
-  components: {},
-
-  head() {
-    return {
-      title: 'Style Guide',
-    }
-  },
-
-  data() {
-    return {};
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
-</script>
+<script setup></script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.style-guide {
-
-}
-
+.style-guide {}
 </style>

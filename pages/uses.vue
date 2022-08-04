@@ -10,57 +10,17 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script>
-import Meta from '@/mixins/Meta';
+<script setup>
+const route = useRoute()
+const { apiBase } = useRuntimeConfig()
+const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
+data.value = data.value[0];
 
-export default {
-  async asyncData({ route, $axios }) {
-    let response = await $axios.$get(`/pages/?slug=${route.name}`);
-    let data = response[0];
-    return { data };
-  },
-
-  name: "uses-page",
-
-  props: {},
-
-  components: {},
-
-  mixins: [Meta],
-
-  data() {
-    return {
-      pageName: 'Uses',
-    };
-  },
-
-  beforeCreate() {},
-
-  created() {},
-
-  beforeMount() {},
-
-  mounted() {},
-
-  beforeUpdate() {},
-
-  updated() {},
-
-  beforeDestroy() {},
-
-  destroyed() {},
-
-  computed: {},
-
-  methods: {},
-
-  watch: {}
-
-};
+const metaData = getMetaData('Uses', data.value);
+useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.uses {
-}
+.uses {}
 </style>
