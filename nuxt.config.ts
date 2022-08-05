@@ -5,8 +5,6 @@ export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  fallback: true,
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/vendor/_normalize.scss',
