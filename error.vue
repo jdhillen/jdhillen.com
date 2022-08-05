@@ -6,7 +6,7 @@
         <div class="container">
           <div class="row">
             <div class="twelve columns">
-              <h1>404</h1>
+              <h1>{{ error.statusCode }}</h1>
               <button @click="handleError">Return Home</button>
             </div>
           </div>
