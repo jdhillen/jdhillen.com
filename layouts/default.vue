@@ -2,7 +2,7 @@
 <template>
   <main class="app">
     <SiteHeader/>
-    <slot/>
+    <NuxtPage />
     <SiteFooter />
   </main>
 </template>
