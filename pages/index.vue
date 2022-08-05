@@ -14,13 +14,17 @@
 const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-const meta = {
-  name: 'Home',
-  desc: data.value?.[0].description,
-  img: data.value?.[0].image
+if (!data.value || data.value.length <= 0) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+} else {
+  const meta = {
+    name: 'Home',
+    desc: data.value?.[0].description,
+    img: data.value?.[0].image
+  }
+  const metaData = getMetaData(meta);
+  useHead(metaData);
 }
-const metaData = getMetaData(meta);
-useHead(metaData);
 
 // onMounted(() => {
 //   hljs.highlightAll();

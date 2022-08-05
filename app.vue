@@ -1,10 +1,8 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <main class="app">
-    <SiteHeader/>
-    <slot />
-    <SiteFooter />
-  </main>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <!--|== Scripts ================================================================================ -->
@@ -12,9 +10,4 @@
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.app {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 </style>

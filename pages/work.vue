@@ -3,9 +3,7 @@
   <section class="page work">
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
-          <h1>Work</h1>
-        </div>
+        <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
       </div>
     </div>
   </section>
@@ -13,12 +11,20 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-// const route = useRoute()
-// const { apiBase } = useRuntimeConfig()
-// const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-
-// const metaData = getMetaData('Work', data.value);
-// useHead(metaData);
+const route = useRoute()
+const { apiBase } = useRuntimeConfig()
+const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
+if (!data.value || data.value.length <= 0) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+} else {
+  const meta = {
+    name: 'Work',
+    desc: data.value?.[0].description,
+    img: data.value?.[0].image
+  }
+  const metaData = getMetaData(meta);
+  useHead(metaData);
+}
 </script>
 
 <!--|== CSS ==================================================================================== -->
