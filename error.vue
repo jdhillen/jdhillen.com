@@ -2,13 +2,30 @@
 <template>
   <main class="app">
     <SiteHeader/>
-    <slot />
+      <section class="page fourOhFour">
+        <div class="container">
+          <div class="row">
+            <div class="twelve columns">
+              <h1>404</h1>
+              <button @click="handleError">Return Home</button>
+            </div>
+          </div>
+        </div>
+      </section>
     <SiteFooter />
   </main>
 </template>
 
+
 <!--|== Scripts ================================================================================ -->
-<script setup></script>
+<script setup>
+const props = defineProps({
+  error: Object
+})
+
+const handleError = () => clearError({ redirect: '/' })
+</script>
+
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
