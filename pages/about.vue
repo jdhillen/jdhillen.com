@@ -15,7 +15,7 @@ import { createError } from 'h3';
 const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-if (!data.value || data.value.length <= 0) {
+if (!data.value || !data.value.length) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
 } else {
   const meta = {
