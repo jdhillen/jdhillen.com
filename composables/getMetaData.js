@@ -6,6 +6,7 @@ export default function getMetaData(meta) {
       lang: 'en',
     },
     meta: [
+      { name: 'title', content: `J.D. Hillen - ${meta.name}` },
       { name: 'description', content: meta.desc },
       { name: 'og:type', content: 'website' },
       { name: 'og:url', content: `https://jdhillen.com${route.fullPath}` },
