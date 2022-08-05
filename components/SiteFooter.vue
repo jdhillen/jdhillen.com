@@ -67,7 +67,7 @@ const { data: contact } = await useFetch(`${apiBase}/resume/contact/1/`);
         display: flex;
         margin: 10px;
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 550px) {
           margin: 10px 20px;
         }
 

@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page uses">
+  <section class="page talks">
     <div class="container">
       <div class="row">
         <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
@@ -15,7 +15,7 @@ const route = useRoute()
 const { apiBase } = useRuntimeConfig()
 const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
 const meta = {
-  name: 'Uses',
+  name: 'Talks',
   desc: data.value?.[0].description,
   img: data.value?.[0].image
 }
@@ -25,5 +25,5 @@ useHead(metaData);
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.uses {}
+.talks {}
 </style>
