@@ -1,7 +1,8 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <main class="app">
+  <div class="app">
     <SiteHeader/>
+    <main>
       <section class="page fourOhFour">
         <div class="container">
           <div class="row">
@@ -12,8 +13,9 @@
           </div>
         </div>
       </section>
+    </main>
     <SiteFooter />
-  </main>
+  </div>
 </template>
 
 

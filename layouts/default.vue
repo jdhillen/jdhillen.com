@@ -1,10 +1,12 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <main class="app">
+  <div class="app">
     <SiteHeader/>
-    <NuxtPage />
+    <main>
+      <NuxtPage />
+    </main>
     <SiteFooter />
-  </main>
+  </div>
 </template>
 
 <!--|== Scripts ================================================================================ -->
