@@ -15,7 +15,9 @@
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
 .app {
-  height: 100%;
+  flex: 1;
+  height: auto !important;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }

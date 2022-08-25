@@ -105,6 +105,7 @@ onMounted(() => {
 
     @media (min-width: 750px) {
       visibility: hidden;
+      display: none;
     }
   }
 
