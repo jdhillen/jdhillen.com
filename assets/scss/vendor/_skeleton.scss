@@ -203,25 +203,16 @@ h6 {
   font-weight: 300;
   line-height: 1;
 }
-h1 { font-size: 3.25rem; }
-h2 { font-size: 3rem; }
-h3 { font-size: 2.5rem; }
-h4 { font-size: 2rem; }
-h5 { font-size: 1.5rem; }
-h6 { font-size: 1rem; }
-
-/* Larger than phablet */
-@media (min-width: 550px) {
-  h1 { font-size: 4.0rem; }
-  h2 { font-size: 3.5rem; }
-  h3 { font-size: 3rem; }
-  h4 { font-size: 2.5rem; }
-  h5 { font-size: 2rem; }
-  h6 { font-size: 1.5rem; }
-}
+h1 { font-size: clamp(2rem, 1vw + 2rem, 4rem); }
+h2 { font-size: clamp(1.5rem, 1vw + 1.75rem, 3.5rem);  }
+h3 { font-size: clamp(1rem, 1vw + 1.5rem, 3rem);  }
+h4 { font-size: clamp(1rem, 1vw + 1.25rem, 2.5rem);  }
+h5 { font-size: clamp(1rem, 1vw + 1rem, 2rem); }
+h6 { font-size: clamp(1rem, 1vw + 0.75rem, 1.5rem); }
 
 p {
   margin-top: 0;
+  font-size: clamp(0.2rem, 1vw + 1rem, 1rem);
 }
 
 /* Links
@@ -368,14 +359,14 @@ label > .label-body {
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: circle inside;
+  list-style: disc outside;
 }
 ol {
-  list-style: decimal inside;
+  list-style: decimal outside;
 }
 ol,
 ul {
-  padding-left: 0;
+  padding-left: 1rem;
   margin-top: 0;
 }
 ul ul,
@@ -386,7 +377,8 @@ ol ul {
   font-size: 90%;
 }
 li {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 0.25rem;
 }
 
 /* Code
