@@ -13,7 +13,7 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.6",
-    "sass": "^1.54.2"
+    "nuxt": "3.0.0-rc.11",
+    "sass": "^1.54.9"
   }
 }

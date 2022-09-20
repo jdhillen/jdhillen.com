@@ -1,0 +1,24 @@
+# [jdhilen.com](https://github.com/jdhillen/jdhillen.com) - CHANGELOG
+
+> All notable changes to this project will be documented in this file.
+
+---
+
+## [v0.0.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.0) - 2022-09-20
+
+### Added
+
+- Added - CHANGELOG
+
+### Update
+
+- nuxt => v3.0.0-rc.11
+- sass => v1.54.9
+
+---
+
+---
+
+_The format is based on [Keep a CHANGELOG](http://keepachangelog.com)_
+
+---
