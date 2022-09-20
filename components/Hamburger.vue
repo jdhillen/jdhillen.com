@@ -1,10 +1,10 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div ref="ham" class="ham" :class="{active: isActive}">
+  <button ref="ham"  type="button"  class="ham" :class="{active: isActive}">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
 </template>
 
 <!--|== Scripts ================================================================================ -->
@@ -21,11 +21,13 @@ defineExpose({ toggleHamburger });
 <!--|== CSS ==================================================================================== -->
 <style lang="scss">
 .ham {
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 8px;
+  right: 0;
   width: 50px;
   height: 50px;
+  border: none;
+  margin: 0;
   cursor: pointer;
 
   span {

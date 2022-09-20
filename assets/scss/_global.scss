@@ -20,6 +20,8 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
+  display: block;
+  overflow: auto;
   @extend .smooth;
 
   @media (min-width: 750px) {
@@ -31,6 +33,19 @@ html {
   background-color: black(0.02);
   background-image: url('~/assets/img/layout/bg.png');
   background-repeat: repeat;
+}
+
+#__nuxt {
+  height: auto !important;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
