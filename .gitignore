@@ -91,3 +91,6 @@ sw.*
 
 # output folder
 .output
+
+# vscode folder
+.vscode

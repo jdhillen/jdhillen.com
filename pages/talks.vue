@@ -11,16 +11,19 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const route = useRoute()
-const { apiBase } = useRuntimeConfig()
-const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-const meta = {
-  name: 'Talks',
-  desc: data.value?.[0].description,
-  img: data.value?.[0].image
-}
-const metaData = getMetaData(meta);
-useHead(metaData);
+  const route = useRoute();
+  const { apiBase } = useRuntimeConfig();
+  const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
+  if (!data.value || data.value === []) {
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+  }
+  const meta = {
+    name: 'Talks',
+    desc: data.value?.[0].description,
+    img: data.value?.[0].image
+  }
+  const metaData = getMetaData(meta);
+  useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
