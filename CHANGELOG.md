@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.0.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.1) - 2022-09-28
+
+### Update
+
+- sass => v1.55.0
+
+---
+
 ## [v0.0.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.0) - 2022-09-20
 
 ### Added
