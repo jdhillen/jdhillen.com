@@ -4,6 +4,20 @@
 
 ---
 
+## [v0.0.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.2) - 2022-09-28
+
+### Removed
+
+- store folder (may readd when it's needed)
+
+### Added
+
+- .vscode folder to .gitignore
+- Error handling for fetch api calls in pages.
+- New CSS for full height Error page.
+
+---
+
 ## [v0.0.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.1) - 2022-09-28
 
 ### Update
