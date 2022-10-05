@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.0.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.3) - 2022-10-05
+
+### Update
+
+- Page meta tags to be meta_title, meta_description and meta_image to follow the API structure
+
+---
+
 ## [v0.0.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.2) - 2022-09-28
 
 ### Removed
