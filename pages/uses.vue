@@ -18,7 +18,7 @@
     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
   }
   const meta = {
-    name: data.value?.[0].meta_title,
+    title: data.value?.[0].meta_title,
     desc: data.value?.[0].meta_description,
     img: data.value?.[0].meta_image
   }

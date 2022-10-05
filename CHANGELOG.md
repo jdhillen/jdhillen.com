@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.0.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.4) - 2022-10-05
+
+### Update
+
+- Changed meta.name to meta.title for clearer readability
+
+---
+
 ## [v0.0.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.3) - 2022-10-05
 
 ### Update
