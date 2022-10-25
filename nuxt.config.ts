@@ -2,9 +2,6 @@ import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/vendor/_normalize.scss',
