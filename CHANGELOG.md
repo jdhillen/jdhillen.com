@@ -10,6 +10,7 @@
 
 - Created a new app.vue in the root
 - Created a 404.vue page
+- Created blog page templates
 
 ### Update
 
