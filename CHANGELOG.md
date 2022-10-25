@@ -22,6 +22,10 @@
 
 - target: 'static' from nuxt.config.ts
 
+### Fixed
+
+- === operator for data validation on Index, About, Talks and Uses pages
+
 ---
 
 ## [v0.0.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.4) - 2022-10-05

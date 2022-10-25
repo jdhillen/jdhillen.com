@@ -14,7 +14,7 @@
   const route = useRoute();
   const { apiBase } = useRuntimeConfig();
   const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-  if (!data.value || data.value === []) {
+  if (!data.value || data.value = []) {
     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
   }
   const meta = {
