@@ -4,6 +4,31 @@
 
 ---
 
+## [v0.0.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.5) - 2022-10-25
+
+### Added
+
+- Created a new app.vue in the root
+- Created a 404.vue page
+- Created blog page templates
+
+### Update
+
+- Version bump => v0.0.5
+- nuxt => v3.0.0-rc.11
+- Moved the default layout to app.vue and created a blank layout as default
+- Renamed lintfix to lint:fix in package.json to fix spelling error
+
+### Removed
+
+- target: 'static' from nuxt.config.ts
+
+### Fixed
+
+- === operator for data validation on Index, About, Talks and Uses pages
+
+---
+
 ## [v0.0.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.4) - 2022-10-05
 
 ### Update
