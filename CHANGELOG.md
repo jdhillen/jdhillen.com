@@ -4,6 +4,16 @@
 
 ---
 
+## [v0.0.6](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.6) - 2022-11-04
+
+### Update
+
+- Version bump => v0.0.6
+- nuxt => v3.0.0-rc.12
+- sass => v1.56.0
+
+---
+
 ## [v0.0.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.5) - 2022-10-25
 
 ### Added
