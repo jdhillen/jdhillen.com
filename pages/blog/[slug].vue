@@ -3,6 +3,9 @@
   <section class="page post">
     <div class="container">
       <div class="row">
+        <h2 class="twelve columns" v-if="post" v-html="post.results[0].name"/>
+      </div>
+      <div class="row">
         <div class="twelve columns" v-if="post" v-html="post.results[0].body_rendered"/>
       </div>
     </div>
@@ -22,12 +25,8 @@
     desc: post.value?.results[0].meta_description,
     img: post.value?.results[0].meta_image
   }
-  const metaData = getMetaData(meta);
+  const metaData = useMetaData(route, meta);
   useHead(metaData);
-
-  onMounted(() => {
-    hljs.highlightAll();
-  });
 </script>
 
 <!--|== CSS ==================================================================================== -->

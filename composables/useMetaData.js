@@ -1,5 +1,4 @@
-export default function getMetaData(meta) {
-  const route = useRoute()
+export default function getMetaData(route, meta) {
   const obj = {
     title: `J.D. Hillen - ${meta.title}`,
     htmlAttrs: {

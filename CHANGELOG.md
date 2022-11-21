@@ -4,6 +4,28 @@
 
 ---
 
+## [v0.1.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.0) - 2022-11-21
+
+### Update
+
+- Version bump => v0.1.0
+- nuxt => v3.0.0
+- sass => v1.56.1
+
+### Added
+
+- Created a useMetaData.js composable
+- Created a usePageSetup.js composable
+- Created a highlight.client.js plugin for code highlighting
+- Added Headline name to the blog post
+
+### Removed
+
+- layouts
+- 404.vue page for the error.vue page
+
+---
+
 ## [v0.0.6](https://github.com/jdhillen/jdhillen.com/releases/tag/0.0.6) - 2022-11-04
 
 ### Update

@@ -9,12 +9,14 @@
       </div>
       <div class="nav__desktop">
         <NuxtLink to="/about">About</NuxtLink>
+        <NuxtLink to="/blog">Blog</NuxtLink>
         <NuxtLink to="/uses">Uses</NuxtLink>
       </div>
     </div>
     <Hamburger ref="hamburger" class="nav__ham" @click.native="toggleMobileNav"/>
     <div ref="mobileNav" class="nav__mobile bokeh" :class="{ active: isActive }">
       <NuxtLink to="/about" @click.native="toggleMobileNav">About</NuxtLink>
+      <NuxtLink to="/blog" @click.native="toggleMobileNav">Blog</NuxtLink>
       <NuxtLink to="/uses" @click.native="toggleMobileNav">Uses</NuxtLink>
     </div>
   </nav>

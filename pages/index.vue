@@ -11,23 +11,7 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-  const route = useRoute();
-  const { apiBase } = useRuntimeConfig();
-  const { data } = await useFetch(`${apiBase}/pages/?slug=${route.name}`);
-  if (!data.value || data.value == []) {
-    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-  }
-  const meta = {
-    title: data.value?.[0].meta_title,
-    desc: data.value?.[0].meta_description,
-    img: data.value?.[0].meta_image
-  }
-  const metaData = getMetaData(meta);
-  useHead(metaData);
-
-// onMounted(() => {
-//   hljs.highlightAll();
-// });
+ const { data } = await usePageSetup();
 </script>
 
 <!--|== CSS ==================================================================================== -->
