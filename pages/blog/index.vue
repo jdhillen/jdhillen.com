@@ -6,7 +6,7 @@
         <div class="twelve columns" v-if="page" v-html="page[0].body_rendered"/>
       </div>
       <div class="row" v-if="blogs" v-for="blog in blogs.results">
-        <NuxtLink :to="'/blog/' + blog.slug">
+        <NuxtLink :to="'/blog/' + blog.slug" class="post">
           <div class="twelve columns">
             <h3>{{ blog.name }}</h3>
             <p>{{ blog.description }}</p>
@@ -33,11 +33,21 @@
     desc: page.value?.[0].meta_description,
     img: page.value?.[0].meta_image
   }
-  const metaData = getMetaData(meta);
+  const metaData = useMetaData(route, meta);
   useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
 .blog {}
+
+.post {
+  color: #222;
+  
+  h3 {}
+  
+  p {
+    font-style: italic;
+  }
+}
 </style>

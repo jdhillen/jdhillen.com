@@ -3,9 +3,7 @@
   <div class="app">
     <SiteHeader/>
     <main>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+      <NuxtPage />
     </main>
     <SiteFooter />
   </div>
