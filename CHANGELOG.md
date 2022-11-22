@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.1.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.2) - 2022-11-22
+
+### Added
+
+- Post date to both blog and posts
+
+---
+
 ## [v0.1.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.1) - 2022-11-22
 
 ### Update
