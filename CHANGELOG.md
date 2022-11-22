@@ -4,7 +4,7 @@
 
 ---
 
-## [v0.1.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.1) - 2022-11-22
+## [v0.1.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.1) - 2022-11-22
 
 ### Update
 
