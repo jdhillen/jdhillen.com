@@ -4,6 +4,19 @@
 
 ---
 
+## [v0.1.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.1) - 2022-11-22
+
+### Update
+
+- Version bump => v0.1.1
+
+### Added
+
+- Mastodon Icon to Social Links
+- mastodon svg to icon set
+
+---
+
 ## [v0.1.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.0) - 2022-11-21
 
 ### Update
