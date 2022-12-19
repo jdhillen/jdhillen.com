@@ -7,10 +7,21 @@
           <div class="twelve columns">
             <ul v-if="social">
               <li v-for="item in social">
-                <a :href="item.url" target="_blank" :alt="item.name" rel="noopener noreferrer" class="icon icon__social" :class="['icon__' + item.icon]"></a>
+                <NuxtLink 
+                  :to="item.url"
+                  target="_blank"
+                  :alt="item.name"
+                  class="icon icon__social"
+                  :class="['icon__' + item.icon]"
+                >
+                </NuxtLink>
               </li>
               <li v-if="contact">
-                <a :href="'mailto:' + contact.email + '?subject=Hello'" class="icon icon__social icon__email"></a>
+                <NuxtLink 
+                  :to="'mailto:' + contact.email + '?subject=Hello'"
+                  class="icon icon__social icon__email"
+                >
+                </NuxtLink>
               </li>
             </ul>
           </div>
@@ -23,7 +34,12 @@
           <div class="twelve columns">
             <div class="footer__copyright--txt">
               Made with
-              <a href="https://nuxtjs.org" target="_blank" class="icon icon__nuxt"></a>
+              <NuxtLink
+                to="https://nuxtjs.org"
+                target="_blank"
+                class="icon icon__nuxt"
+              >
+              </NuxtLink>
               by {{ contact.name }}
             </div>
           </div>

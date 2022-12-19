@@ -4,6 +4,16 @@
 
 ---
 
+## [v0.1.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.3) - 2022-12-19
+
+### Update
+
+- Version bump => v0.1.3
+- sass => v1.57.0
+- <a> tags in SiteFooter have been changed to <NuxtLink>
+
+---
+
 ## [v0.1.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.2) - 2022-11-22
 
 ### Added
