@@ -24,7 +24,7 @@
   const { apiBase } = useRuntimeConfig();
   const [{ data }, { data: blogs }] = await Promise.all([
       useFetch(`${apiBase}/pages/?slug=${route.name}`),
-      useFetch(`${apiBase}/blog`)
+      useFetch(`${apiBase}/blog/posts/`)
   ]);
 
   if (!data.value || data.value == []) {

@@ -17,7 +17,7 @@
 <script setup>
   const route = useRoute();
   const { apiBase } = useRuntimeConfig();
-  const { data } = await useFetch(`${apiBase}/blog/?slug=${route.params.slug}`);
+  const { data } = await useFetch(`${apiBase}/blog/posts/?slug=${route.params.slug}`);
   
   if (!data.value.results || data.value.results == []) {
     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
