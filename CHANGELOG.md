@@ -4,6 +4,17 @@
 
 ---
 
+## [v0.1.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.4) - 2022-12-21
+
+### Update
+
+- Version bump => v0.1.4
+- sass => v1.57.1
+- url's changed from /blog to /blog/post
+- Decreased top/bottom padding on social footer
+
+---
+
 ## [v0.1.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.3) - 2022-12-19
 
 ### Update

@@ -65,7 +65,7 @@ const { data: contact } = await useFetch(`${apiBase}/resume/contact/1/`);
 
   &__social {
     text-align: center;
-    padding: 25px 0;
+    padding: 1rem 0;
     background-color: black(0.7);
 
     ul {
