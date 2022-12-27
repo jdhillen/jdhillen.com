@@ -3,11 +3,25 @@
   <section class="page post">
     <div class="container">
       <div class="row">
-        <h2 class="twelve columns" v-if="post" v-html="post.name"/>
-        <div class="post__date">{{ usePostDate(post.created) }}</div>
+        <div class="twelve columns">
+          <h2 v-html="post.name" />
+          <div class="post__subhead">
+            <div class="post__date">{{ usePostDate(post.created) }}</div>
+            <div class="post__time">
+              {{ calcReadingTime(post.body_rendered) }} minute read
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="twelve columns" v-if="post" v-html="post.body_rendered"/>
+        <div class="twelve columns">
+          <img
+            class="post__image"
+            :src="post.meta_image"
+            :alt="post.meta_title"
+          />
+          <article v-html="post.body_rendered"></article>
+        </div>
       </div>
     </div>
   </section>
@@ -15,33 +29,45 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-  const route = useRoute();
-  const { apiBase } = useRuntimeConfig();
-  const { data } = await useFetch(`${apiBase}/blog/posts/?slug=${route.params.slug}`);
-  
-  if (!data.value.results || data.value.results == []) {
-    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-  }
+const route = useRoute();
+const { apiBase } = useRuntimeConfig();
+const { data } = await useFetch(
+  `${apiBase}/blog/posts/?slug=${route.params.slug}`
+);
 
-  const post = data.value.results[0];
+if (!data.value.results || data.value.results == []) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+}
 
-  const meta = {
-    title: post.meta_title,
-    desc: post.meta_description,
-    img: post.meta_image
-  }
-  const metaData = useMetaData(route, meta);
-  useHead(metaData);
+const post = data.value.results[0];
+
+const meta = {
+  title: post.meta_title,
+  desc: post.meta_description,
+  img: post.meta_image
+};
+const metaData = useMetaData(route, meta);
+useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
 .post {
-
-  &__date {
+  &__subhead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__date,
+  &__time {
     font-style: italic;
     margin-bottom: 2rem;
   }
-
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    background-color: black(0.8);
+  }
 }
 </style>
