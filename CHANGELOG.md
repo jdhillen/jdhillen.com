@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.1.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.5) - 2022-12-27
+
+### Added
+
+- Average Reading Times to Blog posts
+
+---
+
 ## [v0.1.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.4) - 2022-12-21
 
 ### Update
