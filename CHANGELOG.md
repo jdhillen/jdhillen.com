@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.1.6](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.6) - 2022-12-30
+
+### Added
+
+- hr break to the Blogs page
+
+---
+
 ## [v0.1.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.1.5) - 2022-12-27
 
 ### Added

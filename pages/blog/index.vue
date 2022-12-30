@@ -16,6 +16,7 @@
               </div>
             </div>
             <p>{{ blog.description }}</p>
+            <hr />
           </div>
         </NuxtLink>
       </div>
