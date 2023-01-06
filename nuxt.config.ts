@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
-  modules: {},
+  modules: [],
 
   runtimeConfig: {
     public: {
