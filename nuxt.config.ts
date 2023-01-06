@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
-  modules: [],
+  modules: ['nuxt-simple-sitemap'],
 
   runtimeConfig: {
     public: {
@@ -81,5 +81,17 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
+
+  sitemap: {
+    hostname: 'https://jdhillen.com',
+    exclude: ['/style-guide/']
   }
 });
