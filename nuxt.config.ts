@@ -62,6 +62,10 @@ export default defineNuxtConfig({
         {
           type: 'text/javascript',
           src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'
+        },
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=UA-4521767-2',
+          async: true
         }
       ]
     }

@@ -8,7 +8,6 @@
 
 ### Added
 
-- vue-gtag package
 - new ga.client.js plugin to handle Google Analytics
 
 ### Update

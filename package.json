@@ -15,8 +15,5 @@
   "devDependencies": {
     "nuxt": "3.0.0",
     "sass": "^1.57.1"
-  },
-  "dependencies": {
-    "vue-gtag": "^2.0.1"
   }
 }

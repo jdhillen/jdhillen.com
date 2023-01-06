@@ -1,9 +1,14 @@
-import VueGtag from 'vue-gtag';
+export default defineNuxtPlugin(() => {
+  // Create gtag function & define gtag deps (window.dataLayer array)
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(VueGtag, {
-    property: {
-      id: 'UA-4521767-2'
-    }
-  });
+  // Config with gtagId & send initial page view
+  gtag('config', 'UA-4521767-2', { send_page_view: true });
+
+  // Inject gtag function
+  return { provide: { gtag } };
 });
