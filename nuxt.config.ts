@@ -6,6 +6,8 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
+  modules: ['@funken-studio/sitemap-nuxt-3'],
+
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE
@@ -79,5 +81,11 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  sitemap: {
+    hostname: 'https://jdhillen.com',
+    gzip: true,
+    exclude: ['/style-guide']
   }
 });

@@ -9,6 +9,7 @@
 ### Added
 
 - new ga.client.js plugin to handle Google Analytics
+- sitemap generator to create XML on build
 
 ### Update
 
