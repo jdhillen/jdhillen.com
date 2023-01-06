@@ -15,8 +15,5 @@
   "devDependencies": {
     "nuxt": "3.0.0",
     "sass": "^1.57.1"
-  },
-  "dependencies": {
-    "@funken-studio/sitemap-nuxt-3": "^4.0.4"
   }
 }
