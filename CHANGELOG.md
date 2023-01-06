@@ -4,6 +4,14 @@
 
 ---
 
+## [v0.2.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.2.1) - 2023-01-06
+
+### Added
+
+- nuxt-simple-sitemap for automatic sitemap generation on build
+
+---
+
 ## [v0.2.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.2.0) - 2023-01-06
 
 ### Added
