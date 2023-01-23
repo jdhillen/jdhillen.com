@@ -4,6 +4,21 @@
 
 ---
 
+## [v0.2.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.2.2) - 2023-01-23
+
+### Added
+
+- @nuxtjs/robots v3.0.0 for robots.txt generation on build
+- robots.config file
+
+### Update
+
+- Version bump => v0.2.2
+- nuxt-simple-sitemap => v1.0.2
+- Swapped Meta Title and Meta Dynamic Title for better SEO naming
+
+---
+
 ## [v0.2.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.2.1) - 2023-01-06
 
 ### Added

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
-  modules: ['nuxt-simple-sitemap'],
+  modules: ['nuxt-simple-sitemap', '@nuxtjs/robots'],
 
   runtimeConfig: {
     public: {
