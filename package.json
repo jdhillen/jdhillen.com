@@ -1,6 +1,6 @@
 {
   "name": "jdhillen.com",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -13,8 +13,9 @@
     "lint:fix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "devDependencies": {
+    "@nuxtjs/robots": "^3.0.0",
     "nuxt": "3.0.0",
-    "nuxt-simple-sitemap": "^0.5.8",
+    "nuxt-simple-sitemap": "^1.0.2",
     "sass": "^1.57.1"
   }
 }
