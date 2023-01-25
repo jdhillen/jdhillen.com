@@ -4,6 +4,17 @@
 
 ---
 
+## [v0.3.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.3.0) - 2023-01-25
+
+### Update
+
+- Version bump => v0.3.0
+- nuxt => v3.1.0
+- nuxt-simple-sitemap => v1.0.5
+- css update to hr tags
+
+---
+
 ## [v0.2.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.2.2) - 2023-01-23
 
 ### Added
