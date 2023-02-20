@@ -4,6 +4,16 @@
 
 ---
 
+## [v0.3.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.3.2) - 2023-02-20
+
+### Update
+
+- Version bump => v0.3.2
+- nuxt => v3.2.2
+- sass => v1.58.3
+
+---
+
 ## [v0.3.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.3.1) - 2023-02-13
 
 ### Update
