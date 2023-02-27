@@ -10,7 +10,7 @@
           <template v-if="talks" v-for="talk in talks">
             <NuxtLink :to="'/talks/' + talk.slug" class="talk__link">
               <div class="talk__container">
-                <img class="talk__image" :src="talk.meta_image" :alt="talk.name">
+                <img class="talk__image" :src="talk.thumbnail" :alt="talk.name">
                 <h5 class="talk__headline">{{ talk.name }}</h5>
                 <p class="talk__description">{{ talk.description }}</p>
               </div>

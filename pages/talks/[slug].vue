@@ -11,8 +11,8 @@
         <div class="twelve columns">
           <img
             class="post__image"
-            :src="post.meta_image"
-            :alt="post.meta_title"
+            :src="post.thumbnail"
+            :alt="post.name"
           />
           <article v-html="post.body_rendered"></article>
         </div>
