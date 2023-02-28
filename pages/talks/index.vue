@@ -3,20 +3,20 @@
   <section class="page">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="page" v-html="page.body_rendered" />
-      </div>
-      <div class="row">
-        <div class="tweleve columns talk">
-          <template v-if="talks" v-for="talk in talks">
-            <NuxtLink :to="'/talks/' + talk.slug" class="talk__link">
-              <div class="talk__container">
-                <img class="talk__image" :src="talk.thumbnail" :alt="talk.name">
-                <h5 class="talk__headline">{{ talk.name }}</h5>
-                <p class="talk__description">{{ talk.description }}</p>
-              </div>
-            </NuxtLink>
-          </template>
+        <div class="twelve columns" v-if="page">
+          <h1>{{ page.name }}</h1>
+          <article v-html="page.body_rendered"/>
         </div>
+      </div>
+      <div class="talks">
+        <TalkCard
+          v-if="talks"
+          v-for="talk in talks"
+          :slug="talk.slug"
+          :name="talk.name"
+          :description="talk.description"
+          :thumbnail="talk.thumbnail"
+        />
       </div>
     </div>
   </section>
@@ -48,7 +48,7 @@ useHead(metaData);
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.talk {
+.talks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   grid-template-rows: 1fr;
@@ -57,32 +57,6 @@ useHead(metaData);
 
   @media (min-width: 750px) {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  &__link {
-    @extend .box-shadow;
-    color: #222;
-    background-color: $white;
-    padding: 1.5rem;
-  }
-
-  &__container {
-
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
-  &__headline {
-
-  }
-
-  &__description {
-    font-style: italic;
-    margin-bottom: 0;
   }
 }
 </style>

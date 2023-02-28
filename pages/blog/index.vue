@@ -3,7 +3,10 @@
   <section class="page blog">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="page" v-html="page.body_rendered" />
+        <div class="twelve columns" v-if="page">
+          <h1>{{ page.name }}</h1>
+          <article v-html="page.body_rendered"/>
+        </div>
       </div>
       <div class="row" v-if="blogs" v-for="blog in blogs.results">
         <NuxtLink :to="'/blog/' + blog.slug" class="post">

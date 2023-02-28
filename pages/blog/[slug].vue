@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h2 v-html="post.name" />
+          <h1>{{ post.name }}</h1>
           <div class="post__subhead">
             <div class="post__date">{{ usePostDate(post.created) }}</div>
             <div class="post__time">

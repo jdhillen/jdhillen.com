@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h2 v-html="post.name" />
+          <h1>{{ post.name }}</h1>
         </div>
       </div>
       <div class="row">

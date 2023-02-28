@@ -100,7 +100,7 @@ onMounted(() => {
       font-family: 'Open Sans Regular';
       color: $white;
       text-transform: uppercase;
-      padding: 0 10px;
+      padding: 0 1.5rem;
     }
   }
 
