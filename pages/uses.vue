@@ -3,7 +3,10 @@
   <section class="page uses">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="data" v-html="data[0].body_rendered"/>
+        <div class="twelve columns" v-if="data">
+          <h1>{{ data[0].name }}</h1>
+          <article v-html="data[0].body_rendered"/>
+        </div>
       </div>
     </div>
   </section>

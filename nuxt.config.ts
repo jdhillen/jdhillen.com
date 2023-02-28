@@ -93,5 +93,12 @@ export default defineNuxtConfig({
   sitemap: {
     hostname: 'https://jdhillen.com',
     exclude: ['/style-guide/']
-  }
+  },
+
+  routeRules: {    
+    '/talks/': { ssr: false },
+    '/talks/**': { swr: true },    
+    '/blog/': { ssr: false },
+    '/blog/**': { swr: true }, 
+  }  
 });

@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page blog">
+  <section class="page">
     <div class="container">
       <div class="row">
         <div class="twelve columns" v-if="page">
@@ -8,20 +8,15 @@
           <article v-html="page.body_rendered"/>
         </div>
       </div>
-      <div class="row" v-if="blogs" v-for="blog in blogs.results">
-        <NuxtLink :to="'/blog/' + blog.slug" class="post">
-          <div class="twelve columns">
-            <h3>{{ blog.name }}</h3>
-            <div class="post__subhead">
-              <div class="post__date">{{ usePostDate(blog.created) }}</div>
-              <div class="post__time">
-                {{ calcReadingTime(blog.body_rendered) }} minute read
-              </div>
-            </div>
-            <p>{{ blog.description }}</p>
-            <hr />
-          </div>
-        </NuxtLink>
+      <div class="talks">
+        <TalkCard
+          v-if="talks"
+          v-for="talk in talks"
+          :slug="talk.slug"
+          :name="talk.name"
+          :description="talk.description"
+          :thumbnail="talk.thumbnail"
+        />
       </div>
     </div>
   </section>
@@ -31,9 +26,9 @@
 <script setup>
 const route = useRoute();
 const { apiBase } = useRuntimeConfig();
-const [{ data }, { data: blogs }] = await Promise.all([
+const [{ data }, { data: talks }] = await Promise.all([
   useFetch(`${apiBase}/pages/?slug=${route.name}`),
-  useFetch(`${apiBase}/blog/posts/`)
+  useFetch(`${apiBase}/talks/talk/`)
 ]);
 
 if (!data.value || data.value == []) {
@@ -53,26 +48,15 @@ useHead(metaData);
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.blog {
-}
+.talks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  grid-template-rows: 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 
-.post {
-  color: #222;
-
-  &__subhead {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-
-  &__date,
-  &__time {
-    font-style: italic;
-  }
-
-  p {
-    font-style: italic;
+  @media (min-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

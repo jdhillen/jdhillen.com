@@ -5,20 +5,14 @@
       <div class="row">
         <div class="twelve columns">
           <h1>{{ post.name }}</h1>
-          <div class="post__subhead">
-            <div class="post__date">{{ usePostDate(post.created) }}</div>
-            <div class="post__time">
-              {{ calcReadingTime(post.body_rendered) }} minute read
-            </div>
-          </div>
         </div>
       </div>
       <div class="row">
         <div class="twelve columns">
           <img
             class="post__image"
-            :src="post.meta_image"
-            :alt="post.meta_title"
+            :src="post.thumbnail"
+            :alt="post.name"
           />
           <article v-html="post.body_rendered"></article>
         </div>
@@ -32,14 +26,14 @@
 const route = useRoute();
 const { apiBase } = useRuntimeConfig();
 const { data } = await useFetch(
-  `${apiBase}/blog/posts/?slug=${route.params.slug}`
+  `${apiBase}/talks/talk/?slug=${route.params.slug}`
 );
 
-if (!data.value.results || data.value.results == []) {
+if (!data.value || data.value == []) {
   throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
 }
 
-const post = data.value.results[0];
+const post = data.value[0];
 
 const meta = {
   title: post.meta_title,

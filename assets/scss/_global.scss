@@ -93,6 +93,11 @@ h6 {
   backdrop-filter: blur(10px);
 }
 
+// ==|== Box Shadow Effect =========================================================================
+.box-shadow {
+  box-shadow: 0 1px 1px 0 rgb(60 64 67 / 8%), 0 1px 3px 1px rgb(60 64 67 / 16%);
+}
+
 // ==|== Page Transitions ==========================================================================
 .page-enter-active,
 .page-leave-active {

@@ -4,6 +4,23 @@
 
 ---
 
+## [v0.4.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.4.0) - 2023-02-27
+
+### Added
+
+- Talks Page
+- Talks Details Page
+- Talks Navigation
+- TalksCard component
+
+### Update
+
+- Version bump => v0.4.0
+- nuxt => v3.2.3
+- Separated out page titles from body_rendered text
+
+---
+
 ## [v0.3.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.3.3) - 2023-02-23
 
 ### Added
