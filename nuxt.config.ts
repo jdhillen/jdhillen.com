@@ -88,7 +88,6 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/'],
-      ignore: ['/style-guide'],
     }
   },
 
