@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/scss/vendor/_normalize.scss',
+    '@/assets/scss/vendor/_reset.scss',
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
@@ -10,7 +10,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
     }
   },
 
@@ -91,7 +92,6 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    hostname: 'https://jdhillen.com',
-    exclude: ['/style-guide/']
+    sitemaps: true
   },
 });

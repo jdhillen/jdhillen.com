@@ -4,6 +4,26 @@
 
 ---
 
+## [v0.4.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.4.1) - 2023-03-20
+
+### Removed
+
+- normalize.scss
+
+### Added
+
+- Eric Meyer's reset.scss
+
+### Update
+
+- Version bump => v0.4.1
+- nuxt => v3.3.1
+- nuxt-simple-sitemap => 2.1.8
+- sass => 1.59.3
+- Updated to new sitemap generator
+
+---
+
 ## [v0.4.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.4.0) - 2023-02-27
 
 ### Added
