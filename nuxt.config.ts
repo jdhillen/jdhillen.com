@@ -90,8 +90,4 @@ export default defineNuxtConfig({
       routes: ['/']
     }
   },
-
-  sitemap: {
-    sitemaps: true
-  },
 });
