@@ -4,6 +4,23 @@
 
 ---
 
+## [v0.5.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.0) - 2023-04-17
+
+### Added
+
+- Node => v18.16.0
+- NPM => v9.6.4
+
+### Update
+
+- Version bump => v0.5.0
+- nuxt => v3.4.1
+- nuxt-simple-sitemap => v2.4.11
+- sass => 1.62.0
+- Update runtimeConfig to include public in all env variable calls
+
+---
+
 ## [v0.4.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.4.1) - 2023-03-20
 
 ### Removed

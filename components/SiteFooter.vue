@@ -51,9 +51,9 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const { apiBase } = useRuntimeConfig()
-const { data: social } = await useFetch(`${apiBase}/links/social/`);
-const { data: contact } = await useFetch(`${apiBase}/resume/contact/1/`);
+const { API_BASE } = useRuntimeConfig().public;
+const { data: social } = await useFetch(`${API_BASE}/links/social/`);
+const { data: contact } = await useFetch(`${API_BASE}/resume/contact/1/`);
 </script>
 
 <!--|== CSS ==================================================================================== -->

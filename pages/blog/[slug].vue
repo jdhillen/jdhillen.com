@@ -30,9 +30,9 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const { apiBase } = useRuntimeConfig();
+const { API_BASE } = useRuntimeConfig().public;
 const { data } = await useFetch(
-  `${apiBase}/blog/posts/?slug=${route.params.slug}`
+  `${API_BASE}/blog/posts/?slug=${route.params.slug}`
 );
 
 if (!data.value.results || data.value.results == []) {

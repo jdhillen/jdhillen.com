@@ -1,7 +1,7 @@
 export default function usePageSetup() {
   const route = useRoute();
-  const { apiBase } = useRuntimeConfig().public;
-  const res = useFetch(`${apiBase}/pages/?slug=${route.name}`)
+  const { API_BASE } = useRuntimeConfig().public;
+  const res = useFetch(`${API_BASE}/pages/?slug=${route.name}`)
 
   res.then((res) => {
     if (!res.data.value || !res.data.value[0]) {
