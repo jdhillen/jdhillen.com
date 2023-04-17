@@ -30,10 +30,10 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const { apiBase } = useRuntimeConfig();
+const { API_BASE } = useRuntimeConfig().public;
 const [{ data }, { data: blogs }] = await Promise.all([
-  useFetch(`${apiBase}/pages/?slug=${route.name}`),
-  useFetch(`${apiBase}/blog/posts/`)
+  useFetch(`${API_BASE}/pages/?slug=${route.name}`),
+  useFetch(`${API_BASE}/blog/posts/`)
 ]);
 
 if (!data.value || data.value == []) {

@@ -24,9 +24,9 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const { apiBase } = useRuntimeConfig();
+const { API_BASE } = useRuntimeConfig().public;
 const { data } = await useFetch(
-  `${apiBase}/talks/talk/?slug=${route.params.slug}`
+  `${API_BASE}/talks/talk/?slug=${route.params.slug}`
 );
 
 if (!data.value || data.value == []) {
