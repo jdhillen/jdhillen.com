@@ -40,6 +40,14 @@
     background-image: url('./assets/img/icons/twitter.svg');
   }
 
+  &__mastodon {
+    background-image: url('./assets/img/icons/mastodon.svg');
+  }
+
+  &__bluesky {
+    background-image: url('./assets/img/icons/bluesky.svg');
+  }
+
   &__instagram {
     background-image: url('./assets/img/icons/instagram.svg');
   }
@@ -50,10 +58,6 @@
 
   &__sessionize {
     background-image: url('./assets/img/icons/sessionize.svg');
-  }
-
-  &__mastodon {
-    background-image: url('./assets/img/icons/mastodon.svg');
   }
 
   &__rss {

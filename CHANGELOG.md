@@ -4,6 +4,21 @@
 
 ---
 
+## [v0.5.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.1) - 2023-05-08
+
+### Added
+
+- BlueSky Icon to Footer
+
+### Update
+
+- Version bump => v0.5.1
+- nuxt => v3.4.3
+- nuxt-simple-sitemap => v2.4.23
+- sass => 1.62.1
+
+---
+
 ## [v0.5.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.0) - 2023-04-17
 
 ### Added

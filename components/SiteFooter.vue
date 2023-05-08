@@ -69,7 +69,6 @@ const { data: contact } = await useFetch(`${API_BASE}/resume/contact/1/`);
     background-color: black(0.7);
 
     ul {
-      max-width: 500px;
       margin: 0 auto;
       padding: 0;
       list-style-type: none;
