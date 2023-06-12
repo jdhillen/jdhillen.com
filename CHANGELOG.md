@@ -4,6 +4,21 @@
 
 ---
 
+## [v0.5.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.2) - 2023-06-12
+
+### Update
+
+- Version bump => v0.5.2
+- nuxt => v3.5.3
+- nuxt-simple-sitemap => v2.6.2
+- sass => 1.63.3
+
+### Removed
+
+- NPM version pinning
+
+---
+
 ## [v0.5.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.1) - 2023-05-08
 
 ### Added
