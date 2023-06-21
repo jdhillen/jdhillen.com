@@ -11,6 +11,7 @@
                   :to="item.url"
                   target="_blank"
                   :alt="item.name"
+                  :aria-label="item.name"
                   class="icon icon__social"
                   :class="['icon__' + item.icon]"
                 >
@@ -20,6 +21,7 @@
                 <NuxtLink 
                   :to="'mailto:' + contact.email + '?subject=Hello'"
                   class="icon icon__social icon__email"
+                  aria-label="Email Me"
                 >
                 </NuxtLink>
               </li>
@@ -38,6 +40,7 @@
                 to="https://nuxtjs.org"
                 target="_blank"
                 class="icon icon__nuxt"
+                aria-label="Nuxt.js"
               >
               </NuxtLink>
               by {{ contact.name }}
@@ -82,7 +85,7 @@ const { data: contact } = await useFetch(`${API_BASE}/resume/contact/1/`);
         display: flex;
         margin: 10px;
 
-        @media screen and (max-width: 550px) {
+        @include breakpoint('xs') {
           margin: 10px 20px;
         }
 

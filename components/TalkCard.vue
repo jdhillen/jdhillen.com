@@ -37,9 +37,10 @@ const props = defineProps({
 <style lang="scss" scoped>
 .talk {
   @extend .box-shadow;
-    color: #222;
-    background-color: $white;
-    padding: 1.5rem;
+  color: #222;
+  background-color: $white;
+  padding: 1.5rem;
+  text-decoration: none;
 
   &__image {
     width: 100%;

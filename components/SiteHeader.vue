@@ -3,8 +3,8 @@
   <nav id="nav" class="nav">
     <div class="nav__main">
       <div class="nav__logo">
-        <NuxtLink to="/">
-          <div class="nav__logo--img"></div>
+        <NuxtLink to="/" tabindex="0" class="nav__logo--link" aria-label="Home">
+          <img class="nav__logo--img" src="@/assets/img/logos/square.svg" alt="Home"/>
         </NuxtLink>
       </div>
       <div class="nav__desktop">
@@ -60,26 +60,22 @@ onMounted(() => {
   &__main {
     position: relative;
     width: 100%;
-    height: 20px;
     display: flex;
     flex-direction: row;
     margin: 0 10px;
   }
 
   &__logo {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: -5px;
-    left: 0;
+
+    &--link {
+      width: 30px;
+      height: 30px;
+      display: block;
+    }
 
     &--img {
       width: 30px;
       height: 30px;
-      background-image: url('@/assets/img/logos/square.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
       filter: drop-shadow(2px 2px 3px black(0.2));
     }
   }
@@ -101,13 +97,14 @@ onMounted(() => {
       color: $white;
       text-transform: uppercase;
       padding: 0 1.5rem;
+      text-decoration: none;
     }
   }
 
   &__ham {
     z-index: 100;
 
-    @media (min-width: 750px) {
+    @include breakpoint('sm') {
       visibility: hidden;
       display: none;
     }
@@ -129,15 +126,16 @@ onMounted(() => {
     transition: all 250ms ease-in-out;
     z-index: 90;
 
-    @media (min-width: 750px) {
+    @include breakpoint('sm') {
       visibility: hidden;
       opacity: 0;
     }
+
     &.active {
       visibility: visible;
       opacity: 1;
 
-      @media (min-width: 750px) {
+      @include breakpoint('sm') {
         visibility: hidden;
         opacity: 0;
       }
@@ -150,6 +148,7 @@ onMounted(() => {
       line-height: 2.5rem;
       font-family: 'Open Sans Bold';
       padding: 5px 0;
+      text-decoration: none;
     }
   }
 }

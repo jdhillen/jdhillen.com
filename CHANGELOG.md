@@ -4,6 +4,32 @@
 
 ---
 
+## [v0.5.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.3) - 2023-06-21
+
+### Update
+
+- Version bump => v0.5.3
+- nuxt-simple-sitemap => v2.7.0
+- sass => 1.63.5
+
+### Added
+
+- Underlined links in body copy
+- Moved Breakpoints in CSS to it's own file
+- Tab highlights for keyboard accessability
+- aria-label's to footer icons and home button
+
+### Update
+
+- Breakpoints to read from the new breakpoints.scss
+- Minor Nav update to allow for Tab highlights
+
+### Removed
+
+- Deleted user-scalable in the meta
+
+---
+
 ## [v0.5.2](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.2) - 2023-06-12
 
 ### Update
