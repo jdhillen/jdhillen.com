@@ -85,13 +85,11 @@ const { data: contact } = await useFetch(`${API_BASE}/resume/contact/1/`);
         display: flex;
         margin: 10px;
 
-        @include breakpoint('xs') {
-          margin: 10px 20px;
-        }
-
         a {
           color: white(0.75);
           transition: 300ms color;
+          width: 30px;
+          height: 30px;
 
           &:hover {
             color: $white;

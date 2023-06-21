@@ -23,6 +23,7 @@
 
 - Breakpoints to read from the new breakpoints.scss
 - Minor Nav update to allow for Tab highlights
+- Footer icon spacing
 
 ### Removed
 
