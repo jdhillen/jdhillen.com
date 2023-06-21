@@ -55,7 +55,7 @@ useHead(metaData);
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
 
-  @media (min-width: 750px) {
+  @include breakpoint('sm') {
     grid-template-columns: repeat(2, 1fr);
   }
 }

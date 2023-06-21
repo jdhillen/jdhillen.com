@@ -1,6 +1,12 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <button ref="ham"  type="button"  class="ham" :class="{active: isActive}">
+  <button
+    ref="ham"
+    type="button"
+    class="ham"
+    aria-label="Navigation Menu"
+    :class="{active: isActive}"
+  >
     <span></span>
     <span></span>
     <span></span>
