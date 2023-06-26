@@ -1,8 +1,9 @@
 <!--|== Template =============================================================================== -->
 <template>
   <div class="app">
+    <SkipToMain/>
     <SiteHeader/>
-    <main>
+    <main id="main">
       <NuxtPage />
     </main>
     <SiteFooter />
