@@ -4,6 +4,20 @@
 
 ---
 
+## [v0.5.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.4) - 2023-06-26
+
+### Update
+
+- Version bump => v0.5.4
+- nuxt => v3.6.1
+- sass => 1.63.6
+
+### Added
+
+- SkipToMain accessibility link to bypass navigation when tabbing
+
+---
+
 ## [v0.5.3](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.3) - 2023-06-21
 
 ### Update
