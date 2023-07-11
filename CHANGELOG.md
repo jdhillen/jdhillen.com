@@ -4,6 +4,20 @@
 
 ---
 
+## [v0.5.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.4) - 2023-07-11
+
+### Update
+
+- Version bump => v0.5.5
+- nuxt => v3.6.2
+- nuxt-simple-sitemap => 3.0.9
+
+### Added
+
+- Threads Icon to Footer
+
+---
+
 ## [v0.5.4](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.4) - 2023-06-26
 
 ### Update
