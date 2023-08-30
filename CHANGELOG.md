@@ -4,6 +4,17 @@
 
 ---
 
+## [v0.6.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.6.0) - 2023-08-30
+
+### Update
+
+- Version bump => v0.6.0
+- nuxt => v3.7.0
+- nuxt-simple-sitemap => 3.2.6
+- sass => v1.66.1
+
+---
+
 ## [v0.5.5](https://github.com/jdhillen/jdhillen.com/releases/tag/0.5.4) - 2023-07-11
 
 ### Update
