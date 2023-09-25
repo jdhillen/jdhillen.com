@@ -4,6 +4,26 @@
 
 ---
 
+## [v0.6.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.6.1) - 2023-09-25
+
+### Update
+
+- Version bump => v0.6.1
+- nuxt => v3.7.3
+- nuxt-simple-sitemap => v3.3.4
+- sass => v1.68.0
+
+### Added
+
+- nuxt-gtag v1.1.1
+- GA4 Tag to nuxt.config.ts
+
+### Removed
+
+- ga.client.js - Not needed any longer
+
+---
+
 ## [v0.6.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.6.0) - 2023-08-30
 
 ### Update
