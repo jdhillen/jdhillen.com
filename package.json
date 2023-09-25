@@ -1,6 +1,6 @@
 {
   "name": "jdhillen.com",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "engines": {
     "node": ">=18.16.0"
   },
@@ -17,8 +17,9 @@
   },
   "devDependencies": {
     "@nuxtjs/robots": "^3.0.0",
-    "nuxt": "^3.7.0",
-    "nuxt-simple-sitemap": "^3.2.6",
-    "sass": "^1.66.1"
+    "nuxt": "^3.7.3",
+    "nuxt-gtag": "^1.1.1",
+    "nuxt-simple-sitemap": "^3.3.4",
+    "sass": "^1.68.0"
   }
 }

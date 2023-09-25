@@ -6,12 +6,12 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
-  modules: ['nuxt-simple-sitemap', '@nuxtjs/robots'],
+  modules: ['nuxt-simple-sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
 
   runtimeConfig: {
     public: {
       API_BASE: process.env.NUXT_PUBLIC_API_BASE,
-      SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
+      SITE_URL: process.env.NUXT_PUBLIC_SITE_URL
     }
   },
 
@@ -27,8 +27,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: 'viewport',
-          content:
-            'width=device-width, initial-scale=1.0'
+          content: 'width=device-width, initial-scale=1.0'
         },
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'msapplication-TileColor', content: '#333333' },
@@ -58,17 +57,13 @@ export default defineNuxtConfig({
         { rel: 'mask-icon', color: '#333333', href: '/safari-pinned-tab.svg' },
         {
           rel: 'stylesheet',
-          href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/hybrid.min.css'
+          href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/hybrid.min.css'
         }
       ],
       script: [
         {
           type: 'text/javascript',
-          src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js'
-        },
-        {
-          src: 'https://www.googletagmanager.com/gtag/js?id=UA-4521767-2',
-          async: true
+          src: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js'
         }
       ]
     }
@@ -87,13 +82,15 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: ['/']
     }
   },
 
   sitemap: {
-    exclude: [
-        '/style-guide'
-    ]
+    exclude: ['/style-guide']
+  },
+
+  gtag: {
+    id: 'G-PEK3Y8LZW0'
   }
 });
