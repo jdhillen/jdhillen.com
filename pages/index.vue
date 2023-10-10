@@ -15,12 +15,12 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import transitionConfig from '../helpers/transitionConfig';
+import defaultPageTransition from '../composables/transitions/defaultPageTransition';
 
 const { data } = await usePageSetup();
 
 definePageMeta({
-  pageTransition: transitionConfig,
+  pageTransition: defaultPageTransition,
 });
 </script>
 

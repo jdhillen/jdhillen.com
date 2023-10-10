@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   display: block;
-  overflow: auto;
+  overflow-x: hidden;
   @extend .smooth;
 
   @media (min-width: 750px) {
@@ -33,6 +33,7 @@ html {
   background-color: black(0.02);
   background-image: url('~/assets/img/layout/bg.png');
   background-repeat: repeat;
+  --myBlur: 0px;
 }
 
 #__nuxt {
@@ -56,6 +57,7 @@ main {
 .page {
   flex: auto;
   padding: 3rem 0;
+  filter: blur(var(--myBlur));
 }
 
 h1,

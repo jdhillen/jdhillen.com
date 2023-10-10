@@ -1,19 +1,27 @@
 import { gsap } from 'gsap';
 
-import { useTransitionComposable } from '../composables/transitions/pageTransition';
+import { useTransitionComposable } from './transitionState';
 
 const { toggleTransitionComplete } = useTransitionComposable();
 
 const pageTransition = {
-  name: 'page-transiton',
+  name: 'default-page-transiton',
   mode: 'out-in',
   onEnter: (el, done) => {
-    gsap.set(el, { autoAlpha: 0, scale: 0.75, y:'-50' });
+    gsap.set(el, {
+      autoAlpha: 0,
+      "--myBlur": 10,
+      x:-50
+    });
+
+    console.log(el);
+    
     gsap.to(el, {
-      duration: 0.5,
+      delay: 0.25,
+      duration: 0.25,
       autoAlpha: 1,
-      scale: 1,
-      y: 0,
+      x: 0,
+      "--myBlur": 0,
       ease: "power2.out",
       onComplete: done
     });
@@ -21,10 +29,10 @@ const pageTransition = {
   onLeave: (el, done) => {
     toggleTransitionComplete(false);
     gsap.to(el, {
-      duration: 0.5,
+      duration: 0.25,
       autoAlpha: 0,
-      scale: 0.75,
-      y:'-50',
+      x:50,
+      "--myBlur": 10,
       ease: "power2.in",
       onComplete: done
     });
