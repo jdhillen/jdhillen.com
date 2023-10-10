@@ -15,7 +15,13 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+import transitionConfig from '../helpers/transitionConfig';
+
 const { data } = await usePageSetup();
+
+definePageMeta({
+  pageTransition: transitionConfig,
+});
 </script>
 
 <!--|== CSS ==================================================================================== -->
