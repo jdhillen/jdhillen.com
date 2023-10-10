@@ -33,7 +33,7 @@ html {
   background-color: black(0.02);
   background-image: url('~/assets/img/layout/bg.png');
   background-repeat: repeat;
-  --myBlur: 0px;
+  --myBlur: 0px;  // Variable for GSAP Page Transitions
 }
 
 #__nuxt {
