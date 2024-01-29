@@ -1,6 +1,6 @@
 {
   "name": "jdhillen.com",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "engines": {
     "node": ">=18.16.0"
   },
@@ -17,12 +17,12 @@
   },
   "devDependencies": {
     "@nuxtjs/robots": "^3.0.0",
-    "nuxt": "^3.7.3",
-    "nuxt-gtag": "^1.1.1",
-    "nuxt-simple-sitemap": "^3.3.4",
-    "sass": "^1.68.0"
+    "nuxt": "^3.9.3",
+    "nuxt-gtag": "^1.1.2",
+    "nuxt-simple-sitemap": "^4.4.1",
+    "sass": "^1.70.0"
   },
   "dependencies": {
-    "gsap": "npm:@gsap/business@^3.12.2"
+    "gsap": "^3.12.5"
   }
 }
