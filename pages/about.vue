@@ -14,7 +14,13 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
- const { data } = await usePageSetup();
+import defaultPageTransition from '../composables/transitions/defaultPageTransition';
+
+const { data } = await usePageSetup();
+
+definePageMeta({
+  pageTransition: defaultPageTransition,
+});
 </script>
 
 <!--|== CSS ==================================================================================== -->

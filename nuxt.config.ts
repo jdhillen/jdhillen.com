@@ -6,6 +6,10 @@ export default defineNuxtConfig({
     '@/assets/scss/vendor/_skeleton.scss'
   ],
 
+  build: {
+    transpile: ['gsap'],
+  },
+
   modules: ['nuxt-simple-sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
 
   runtimeConfig: {

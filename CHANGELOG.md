@@ -4,6 +4,19 @@
 
 ---
 
+## [v0.7.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.7.0) - 2024-01-29
+
+### Update
+
+- Version bump => v0.7.0
+- nuxt => v3.9.3
+- nuxt-gtag => v1.1.2
+- nuxt-simple-sitemap => v4.4.1
+- sass => v1.70.0
+- Update X and BlueSky Icons
+
+---
+
 ## [v0.6.1](https://github.com/jdhillen/jdhillen.com/releases/tag/0.6.1) - 2023-09-25
 
 ### Update

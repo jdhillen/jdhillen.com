@@ -24,6 +24,12 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
+
+definePageMeta({
+  pageTransition: defaultPageTransition,
+});
+
 const route = useRoute();
 const { API_BASE } = useRuntimeConfig().public;
 const [{ data }, { data: talks }] = await Promise.all([
