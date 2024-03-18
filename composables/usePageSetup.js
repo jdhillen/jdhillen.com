@@ -1,12 +1,12 @@
 export default function usePageSetup() {
 
-  const client = useSupabaseClient();
+  // const client = useSupabaseClient();
 
-  const { data } = useAsyncData('Pages', async () => {
-    return client.from('Pages').select().eq('slug', 'index')
-  });
+  // const { data } = useAsyncData('Pages', async () => {
+  //   return client.from('Pages').select().eq('slug', 'index')
+  // });
 
-  console.log('data', data);
+  // console.log('data', data);
 
 
 
