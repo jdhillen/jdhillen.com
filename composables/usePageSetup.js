@@ -1,4 +1,15 @@
 export default function usePageSetup() {
+
+  const client = useSupabaseClient();
+
+  const { data } = useAsyncData('Pages', async () => {
+    return client.from('Pages').select().eq('slug', 'index')
+  });
+
+  console.log('data', data);
+
+
+
   const route = useRoute();
   const { API_BASE } = useRuntimeConfig().public;
   const res = useFetch(`${API_BASE}/pages/?slug=${route.name}`)

@@ -10,7 +10,12 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
 
-  modules: ['nuxt-simple-sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
+  modules: [
+    'nuxt-simple-sitemap',
+    '@nuxtjs/robots',
+    'nuxt-gtag',
+    '@nuxtjs/supabase',
+  ],
 
   runtimeConfig: {
     public: {
@@ -96,5 +101,18 @@ export default defineNuxtConfig({
 
   gtag: {
     id: 'G-PEK3Y8LZW0'
-  }
+  },
+
+  supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_KEY,
+    redirect: false,
+    redirectOptions: {
+      login: '/',
+      callback: '/',
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false,
+    }
+  },
 });
