@@ -15,12 +15,12 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'nuxt-gtag',
     '@nuxtjs/supabase',
+    '@nuxt/content',
   ],
 
   runtimeConfig: {
     public: {
-      API_BASE: process.env.NUXT_PUBLIC_API_BASE,
-      SITE_URL: process.env.NUXT_PUBLIC_SITE_URL
+      SITE_URL: process.env.SITE_URL
     }
   },
 
