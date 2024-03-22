@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <ContentRenderer :value="parsedMarkdown" v-bind="$attrs" />
+          <MDC :value="body" tag="article" />
         </div>
       </div>
     </div>
@@ -13,20 +13,17 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import markdownParser from '@nuxt/content/transformers/markdown'
 import defaultPageTransition from '../composables/transitions/defaultPageTransition';
 
 const route = useRoute();
 const client = useSupabaseClient();
 
-const { data } = await useAsyncData('Pages', async () => {
+const { data } = await useAsyncData('page', async () => {
   const { data } = await client.from('Pages').select().eq('slug', 'index');
   return data;
 });
 
 const { body, meta_title, meta_description, meta_image } = data.value[0];
-
-let parsedMarkdown = await markdownParser.parse(null, body);
 
 const meta = {
   title: meta_title,

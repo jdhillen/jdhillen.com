@@ -54,9 +54,17 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const { API_BASE } = useRuntimeConfig().public;
-const { data: social } = await useFetch(`${API_BASE}/links/social/`);
-const { data: contact } = await useFetch(`${API_BASE}/resume/contact/1/`);
+const client = useSupabaseClient();
+
+const { data: social } = await useAsyncData('social', async () => {
+  const { data } = await client.from('Social').select('*').order('order', { ascending: true });
+  return data;
+});
+
+const { data: contact } = await useAsyncData('contact', async () => {
+  const { data } = await client.from('User').select().eq('id', '1');
+  return data;
+});
 </script>
 
 <!--|== CSS ==================================================================================== -->

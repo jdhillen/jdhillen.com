@@ -11,11 +11,11 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    'nuxt-simple-sitemap',
+    '@nuxtjs/mdc',
     '@nuxtjs/robots',
-    'nuxt-gtag',
     '@nuxtjs/supabase',
-    '@nuxt/content',
+    'nuxt-simple-sitemap',
+    'nuxt-gtag',
   ],
 
   runtimeConfig: {
