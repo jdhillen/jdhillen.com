@@ -3,12 +3,10 @@ const usePageSetup = async () => {
   const client = useSupabaseClient();
 
   const { data } = await useAsyncData('page', async () => {
-    const { data } = await client.from('Pages').select().eq('slug', route.name);
+    const { data, error } = await client.from('Pages').select().eq('slug', route.name);
 
-    if (!data || !data[0] ) {
-      throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-    }
-    
+    if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
+
     return data[0];
   });
 
