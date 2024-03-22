@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <MDC :value="body" tag="article" />
+          <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
@@ -16,23 +16,16 @@
 import defaultPageTransition from '../composables/transitions/defaultPageTransition';
 
 const route = useRoute();
-const client = useSupabaseClient();
+const data = await usePageSetup();
 
-const { data } = await useAsyncData('page', async () => {
-  const { data } = await client.from('Pages').select().eq('slug', 'index');
-  return data;
+useHead(() => {
+  const meta = {
+    title: data.value.meta_title,
+    desc: data.value.meta_description,
+    img: data.value.meta_image
+  };
+  return useMetaData(route, meta);
 });
-
-const { body, meta_title, meta_description, meta_image } = data.value[0];
-
-const meta = {
-  title: meta_title,
-  desc: meta_description,
-  img: meta_image
-}
-
-const metaData = useMetaData(route, meta);
-useHead(metaData);
 
 definePageMeta({
   pageTransition: defaultPageTransition,

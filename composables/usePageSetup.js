@@ -1,26 +1,18 @@
-export default function usePageSetup() {
+const usePageSetup = async () => {
+  const route = useRoute();
+  const client = useSupabaseClient();
 
-  // const route = useRoute();
-  // const { API_BASE } = useRuntimeConfig().public;
-  // const res = useFetch(`${API_BASE}/pages/?slug=${route.name}`)
+  const { data } = await useAsyncData('page', async () => {
+    const { data } = await client.from('Pages').select().eq('slug', route.name);
 
-  // res.then((res) => {
-  //   if (!res.data.value || !res.data.value[0]) {
-  //     throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-  //   }
-  //   return res;
-  // });
+    if (!data || !data[0] ) {
+      throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
+    }
+    
+    return data[0];
+  });
 
-  // useHead(() => {
-  //   const value = res.data.value?.[0];
-  //   if (res.error.value || !value) { return {} }
-  //   const meta = {
-  //     title: value.meta_title,
-  //     desc: value.meta_description,
-  //     img: value.meta_image
-  //   }
-  //   return useMetaData(route, meta);
-  // });
-
-  // return res
+  return data;
 };
+
+export default usePageSetup;
