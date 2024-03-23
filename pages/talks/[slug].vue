@@ -1,20 +1,20 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page post">
+  <section class="page talk">
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h1>{{ post.name }}</h1>
+          <h1>{{ talk.name }}</h1>
         </div>
       </div>
       <div class="row">
         <div class="twelve columns">
           <img
-            class="post__image"
-            :src="post.thumbnail"
-            :alt="post.name"
+            class="talk__image"
+            :src="talk.thumbnail"
+            :alt="talk.name"
           />
-          <article v-html="post.body_rendered"></article>
+          <MDC :value="talk.body" tag="article" />
         </div>
       </div>
     </div>
@@ -25,34 +25,31 @@
 <script setup>
 import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
 
+const route = useRoute();
+const client = useSupabaseClient();
+
+const { data: talk } = await useAsyncData('talk', async () => {
+  const { data } = await client.from('talks').select().eq('slug', route.params.slug);
+  return data[0];
+});
+
+useHead(() => {
+  const meta = {
+    title: talk.value.meta_title,
+    desc: talk.value.meta_description,
+    img: talk.value.meta_image
+  };
+  return useMetaData(route, meta);
+});
+
 definePageMeta({
   pageTransition: defaultPageTransition,
 });
-
-const route = useRoute();
-const { API_BASE } = useRuntimeConfig().public;
-const { data } = await useFetch(
-  `${API_BASE}/talks/talk/?slug=${route.params.slug}`
-);
-
-if (!data.value || data.value == []) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-}
-
-const post = data.value[0];
-
-const meta = {
-  title: post.meta_title,
-  desc: post.meta_description,
-  img: post.meta_image
-};
-const metaData = useMetaData(route, meta);
-useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.post {
+.talk {
   &__subhead {
     display: flex;
     flex-direction: row;
