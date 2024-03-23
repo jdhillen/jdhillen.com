@@ -3,9 +3,9 @@
   <section class="page about">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="data">
-          <h1>{{ data[0].name }}</h1>
-          <article v-html="data[0].body_rendered"/>
+        <div class="twelve columns">
+          <h1>{{ data.name }}</h1>
+          <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
@@ -16,7 +16,17 @@
 <script setup>
 import defaultPageTransition from '../composables/transitions/defaultPageTransition';
 
-const { data } = await usePageSetup();
+const route = useRoute();
+const data = await usePageSetup();
+
+useHead(() => {
+  const meta = {
+    title: data.value.meta_title,
+    desc: data.value.meta_description,
+    img: data.value.meta_image
+  };
+  return useMetaData(route, meta);
+});
 
 definePageMeta({
   pageTransition: defaultPageTransition,

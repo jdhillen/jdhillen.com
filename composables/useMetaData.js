@@ -1,4 +1,4 @@
-export default function getMetaData(route, meta) {
+const getMetaData = (route, meta) => {
   const obj = {
     title: `${meta.title} - J.D. Hillen`,
     htmlAttrs: {
@@ -22,4 +22,6 @@ export default function getMetaData(route, meta) {
     ]
   };
   return obj;
-}
+};
+
+export default getMetaData;
