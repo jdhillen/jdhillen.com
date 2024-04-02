@@ -1,7 +1,7 @@
 <!--|== Template =============================================================================== -->
 <template>
   <section class="page talk">
-    <div class="container">
+    <div class="container" v-if="talk">
       <div class="row">
         <div class="twelve columns">
           <h1>{{ talk.name }}</h1>
@@ -29,7 +29,9 @@ const route = useRoute();
 const client = useSupabaseClient();
 
 const { data: talk } = await useAsyncData('talk', async () => {
-  const { data } = await client.from('talks').select().eq('slug', route.params.slug);
+  const { data } = await client.from('talks')
+    .select(`*, talks_videos(title, year, url)`)
+    .eq('slug', route.params.slug);
   return data[0];
 });
 
