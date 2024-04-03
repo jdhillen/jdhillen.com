@@ -30,16 +30,10 @@ const client = useSupabaseClient();
 
 const { data: talk } = await useAsyncData('talk', async () => {
   const { data } = await client.from('talks')
-    .select(`*`)
-    .eq('slug', route.params.slug);
+    .select('*, videos:talks_videos(title, date, url)')
+    .eq('slug', route.params.slug)
+    .order('date', { referencedTable: 'talks_videos', ascending: true });
   return data[0];
-});
-
-const { data: videos } = await useAsyncData('videos', async () => {
-  const { data } = await client.from('talks_videos')
-    .select(`*`)
-    .eq('talk_id', talk.value.id);
-  return data;
 });
 
 useHead(() => {
