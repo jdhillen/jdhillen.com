@@ -30,9 +30,16 @@ const client = useSupabaseClient();
 
 const { data: talk } = await useAsyncData('talk', async () => {
   const { data } = await client.from('talks')
-    .select(`*, talks_videos(title, year, url)`)
+    .select(`*`)
     .eq('slug', route.params.slug);
   return data[0];
+});
+
+const { data: videos } = await useAsyncData('videos', async () => {
+  const { data } = await client.from('talks_videos')
+    .select(`*`)
+    .eq('talk_id', talk.value.id);
+  return data;
 });
 
 useHead(() => {

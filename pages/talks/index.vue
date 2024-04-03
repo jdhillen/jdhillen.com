@@ -41,7 +41,10 @@ useHead(() => {
 });
 
 const { data: talks } = await useAsyncData('talks', async () => {
-  const { data } = await client.from('talks').select('*').order('id', { ascending: true })
+  const { data } = await client.from('talks')
+    .select('*')
+    .eq('enabled', 'TRUE')
+    .order('id', { ascending: true })
   return data;
 });
 
