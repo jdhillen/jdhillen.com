@@ -19,12 +19,14 @@
     "@nuxtjs/mdc": "^0.6.1",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/supabase": "^1.1.7",
+    "@types/rss": "^0.0.32",
     "nuxt": "^3.10.3",
     "nuxt-gtag": "^1.1.2",
     "nuxt-simple-sitemap": "^4.4.1",
     "sass": "^1.72.0"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "gsap": "^3.12.5",
+    "rss": "^1.2.2"
   }
 }
