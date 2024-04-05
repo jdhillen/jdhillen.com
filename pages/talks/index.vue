@@ -24,9 +24,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const client = useSupabaseClient();
 const route = useRoute();
-const page = await usePageSetup(client, route.name);
+const page = await usePageSetup('talks');
 
 useHead(() => {
   const meta = {
@@ -37,6 +36,7 @@ useHead(() => {
   return useMetaData(route, meta);
 });
 
+const client = useSupabaseClient();
 const { data: talks } = await useAsyncData('talks', async () => {
   const { data } = await client.from('talks')
     .select('*')

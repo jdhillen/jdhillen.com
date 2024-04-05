@@ -29,9 +29,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const client = useSupabaseClient();
 const route = useRoute();
-const page = await usePageSetup(client, route.name);
+const page = await usePageSetup('blog');
 
 useHead(() => {
   const meta = {
@@ -42,6 +41,7 @@ useHead(() => {
   return useMetaData(route, meta);
 });
 
+const client = useSupabaseClient();
 const { data: blogs } = await useAsyncData('blogs', async () => {
   const { data } = await client.from('blog').select('*').order('id', { ascending: false })
   return data;
