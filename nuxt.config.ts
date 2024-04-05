@@ -10,12 +10,17 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
 
-  modules: ['nuxt-simple-sitemap', '@nuxtjs/robots', 'nuxt-gtag'],
+  modules: [
+    '@nuxtjs/mdc',
+    '@nuxtjs/robots',
+    '@nuxtjs/supabase',
+    '@nuxtjs/sitemap',
+    'nuxt-gtag',
+  ],
 
   runtimeConfig: {
     public: {
-      API_BASE: process.env.NUXT_PUBLIC_API_BASE,
-      SITE_URL: process.env.NUXT_PUBLIC_SITE_URL
+      SITE_URL: process.env.SITE_URL
     }
   },
 
@@ -91,10 +96,37 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/style-guide']
+    exclude: ['/style-guide'],
   },
 
   gtag: {
-    id: 'G-PEK3Y8LZW0'
+    id: process.env.GA_TAG
+  },
+
+  supabase: {
+    url: process.env.SUPABASE_URL,
+    key: process.env.SUPABASE_KEY,
+    redirect: false,
+    redirectOptions: {
+      login: '/',
+      callback: '/',
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false,
+    }
+  },
+
+  mdc: {
+    headings: {
+      anchorLinks: {
+        h1: false,
+        h2: false,
+        h3: false,
+        h4: false,
+        h5: false,
+        h6: false,
+      }
+    },
   }
+
 });

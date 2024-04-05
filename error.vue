@@ -14,7 +14,6 @@
         </div>
       </section>
     </main>
-    <SiteFooter />
   </div>
 </template>
 

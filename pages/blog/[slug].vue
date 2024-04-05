@@ -4,11 +4,11 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h1>{{ post.name }}</h1>
+          <h1>{{ blog.title }}</h1>
           <div class="post__subhead">
-            <div class="post__date">{{ usePostDate(post.created) }}</div>
+            <div class="post__date">{{ usePostDate(blog.created_at) }}</div>
             <div class="post__time">
-              {{ calcReadingTime(post.body_rendered) }} minute read
+              {{ calcReadingTime(blog.body) }} minute read
             </div>
           </div>
         </div>
@@ -17,10 +17,10 @@
         <div class="twelve columns">
           <img
             class="post__image"
-            :src="post.meta_image"
-            :alt="post.meta_title"
+            :src="blog.meta_image"
+            :alt="blog.meta_title"
           />
-          <article v-html="post.body_rendered"></article>
+          <MDC :value="blog.body" tag="article" />
         </div>
       </div>
     </div>
@@ -31,29 +31,26 @@
 <script setup>
 import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
 
+const route = useRoute();
+const client = useSupabaseClient();
+
+const { data: blog } = await useAsyncData('blog', async () => {
+  const { data } = await client.from('blog').select().eq('slug', route.params.slug);
+  return data[0];
+});
+
+useHead(() => {
+  const meta = {
+    title: blog.value.meta_title,
+    desc: blog.value.meta_description,
+    img: blog.value.meta_image
+  };
+  return useMetaData(route, meta);
+});
+
 definePageMeta({
   pageTransition: defaultPageTransition,
 });
-
-const route = useRoute();
-const { API_BASE } = useRuntimeConfig().public;
-const { data } = await useFetch(
-  `${API_BASE}/blog/posts/?slug=${route.params.slug}`
-);
-
-if (!data.value.results || data.value.results == []) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-}
-
-const post = data.value.results[0];
-
-const meta = {
-  title: post.meta_title,
-  desc: post.meta_description,
-  img: post.meta_image
-};
-const metaData = useMetaData(route, meta);
-useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->

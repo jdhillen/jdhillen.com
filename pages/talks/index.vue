@@ -5,7 +5,7 @@
       <div class="row">
         <div class="twelve columns" v-if="page">
           <h1>{{ page.name }}</h1>
-          <article v-html="page.body_rendered"/>
+          <MDC :value="page.body" tag="article" />
         </div>
       </div>
       <div class="talks">
@@ -26,30 +26,31 @@
 <script setup>
 import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
 
+const route = useRoute();
+const client = useSupabaseClient();
+
+const page = await usePageSetup();
+
+useHead(() => {
+  const meta = {
+    title: page.value.meta_title,
+    desc: page.value.meta_description,
+    img: page.value.meta_image
+  };
+  return useMetaData(route, meta);
+});
+
+const { data: talks } = await useAsyncData('talks', async () => {
+  const { data } = await client.from('talks')
+    .select('*')
+    .eq('enabled', 'TRUE')
+    .order('id', { ascending: true })
+  return data;
+});
+
 definePageMeta({
   pageTransition: defaultPageTransition,
 });
-
-const route = useRoute();
-const { API_BASE } = useRuntimeConfig().public;
-const [{ data }, { data: talks }] = await Promise.all([
-  useFetch(`${API_BASE}/pages/?slug=${route.name}`),
-  useFetch(`${API_BASE}/talks/talk/`)
-]);
-
-if (!data.value || data.value == []) {
-  throw createError({ statusCode: 404, statusMessage: 'Page Not Found' });
-}
-
-const page = data.value[0];
-
-const meta = {
-  title: page.meta_title,
-  desc: page.meta_description,
-  img: page.meta_image
-};
-const metaData = useMetaData(route, meta);
-useHead(metaData);
 </script>
 
 <!--|== CSS ==================================================================================== -->
