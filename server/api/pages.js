@@ -7,7 +7,11 @@ export default defineEventHandler(async (event) => {
 
   const { slug } = getQuery(event);
 
-	const { data } = await client.from('pages').select('*').eq('slug', slug).single();
-
-	return data;
+  if (slug) {
+    const { data } = await client.from('pages').select('*').eq('slug', slug).single();
+    return data;
+  } else {
+    const { data } = await client.from('pages').select('*');
+    return data;
+  }
 });
