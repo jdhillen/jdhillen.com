@@ -30,7 +30,7 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const page = await usePageSetup('blog');
+const page = await usePageSetup(route.name);
 
 useHead(() => {
   const meta = {
