@@ -13,8 +13,9 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+const client = useSupabaseClient();
 const route = useRoute();
-const page = await usePageSetup(route.name);
+const page = await usePageSetup(client, route.name);
 
 useHead(() => {
   const meta = {
