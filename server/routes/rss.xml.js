@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
       language: 'en',
       image_url: `${siteUrl}/apple-touch-icon.png`,
       site_url: siteUrl,     // link to your website/blog
-      feed_url: `${siteUrl}/rss`, // path to your rss feed
+      feed_url: `${siteUrl}/rss.xml`, // path to your rss feed
     });
 
     // loop over each posts
