@@ -65,9 +65,6 @@ const { data: contact } = await useAsyncData('profiles', async () => {
   const { data } = await client.from('profiles').select('*').eq('id', 'ef85c3cf-b659-458e-a900-301fc4fa26a0');
   return data[0];
 });
-
-console.log(contact.value);
-
 </script>
 
 <!--|== CSS ==================================================================================== -->
