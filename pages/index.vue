@@ -3,8 +3,8 @@
   <section class="page home">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="page">
-          <MDC :value="page.body" tag="article" />
+        <div class="twelve columns" v-if="data">
+          <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
@@ -14,13 +14,13 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const page = await usePageSetup(route.name);
+const { data } = await useFetch(`api/pages?slug=${route.name}`);
 
 useHead(() => {
   const meta = {
-    title: page.value.meta_title,
-    desc: page.value.meta_description,
-    img: page.value.meta_image
+    title: data.value.meta_title,
+    desc: data.value.meta_description,
+    img: data.value.meta_image
   };
   return useMetaData(route, meta);
 });
