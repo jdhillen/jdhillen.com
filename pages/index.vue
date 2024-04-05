@@ -14,7 +14,14 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const page = await usePageSetup('index');
+// const page = await usePageSetup('index');
+
+const client = useSupabaseClient();
+const { data:page } = await useAsyncData('page', async () => {
+  const { data, error } = await client.from('pages').select('*').eq('slug', route.name).single();
+  if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
+  return data;
+});
 
 useHead(() => {
   const meta = {
