@@ -4,6 +4,16 @@
 
 ---
 
+## [v1.0.0](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.0) - 2024-04-05
+
+### Update
+
+- Version bump => v1.0.0
+- Updated all dependencies
+- Replaced jdhillen.io API with Supabase
+
+---
+
 ## [v0.7.0](https://github.com/jdhillen/jdhillen.com/releases/tag/0.7.0) - 2024-01-29
 
 ### Update

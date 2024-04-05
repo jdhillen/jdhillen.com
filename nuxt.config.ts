@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
     '@nuxtjs/robots',
     '@nuxtjs/supabase',
-    'nuxt-simple-sitemap',
+    '@nuxtjs/sitemap',
     'nuxt-gtag',
   ],
 
@@ -96,11 +96,11 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/style-guide']
+    exclude: ['/style-guide'],
   },
 
   gtag: {
-    id: 'G-PEK3Y8LZW0'
+    id: process.env.GA_TAG
   },
 
   supabase: {
