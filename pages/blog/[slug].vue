@@ -29,8 +29,6 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
-
 const client = useSupabaseClient();
 const route = useRoute();
 
@@ -46,10 +44,6 @@ useHead(() => {
     img: blog.value.meta_image
   };
   return useMetaData(route, meta);
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 </script>
 

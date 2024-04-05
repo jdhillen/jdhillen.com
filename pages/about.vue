@@ -3,9 +3,9 @@
   <section class="page about">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="about">
-          <h1>{{ about.name }}</h1>
-          <MDC :value="about.body" tag="article" />
+        <div class="twelve columns" v-if="page">
+          <h1>{{ page.name }}</h1>
+          <MDC :value="page.body" tag="article" />
         </div>
       </div>
     </div>
@@ -14,28 +14,16 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../composables/transitions/defaultPageTransition';
-
-const client = useSupabaseClient();
 const route = useRoute();
-
-const { data:about } = await useAsyncData('page', async () => {
-  const { data, error } = await client.from('pages').select().eq('slug', route.name);
-  if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
-  return data[0];
-});
+const page = await usePageSetup(route.name);
 
 useHead(() => {
   const meta = {
-    title: about.value.meta_title,
-    desc: about.value.meta_description,
-    img: about.value.meta_image
+    title: page.value.meta_title,
+    desc: page.value.meta_description,
+    img: page.value.meta_image
   };
   return useMetaData(route, meta);
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 </script>
 

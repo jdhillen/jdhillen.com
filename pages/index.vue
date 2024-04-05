@@ -13,16 +13,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../composables/transitions/defaultPageTransition';
-
-const client = useSupabaseClient();
 const route = useRoute();
-
-const { data:page } = await useAsyncData('page', async () => {
-  const { data, error } = await client.from('pages').select().eq('slug', route.name);
-  if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
-  return data[0];
-});
+const page = await usePageSetup(route.name);
 
 useHead(() => {
   const meta = {
@@ -31,10 +23,6 @@ useHead(() => {
     img: page.value.meta_image
   };
   return useMetaData(route, meta);
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 </script>
 
