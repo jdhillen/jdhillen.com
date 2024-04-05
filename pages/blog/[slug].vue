@@ -31,8 +31,8 @@
 <script setup>
 import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
 
-const route = useRoute();
 const client = useSupabaseClient();
+const route = useRoute();
 
 const { data: blog } = await useAsyncData('blog', async () => {
   const { data } = await client.from('blog').select().eq('slug', route.params.slug);

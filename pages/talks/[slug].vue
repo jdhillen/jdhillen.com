@@ -25,8 +25,8 @@
 <script setup>
 import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
 
-const route = useRoute();
 const client = useSupabaseClient();
+const route = useRoute();
 
 const { data: talk } = await useAsyncData('talk', async () => {
   const { data } = await client.from('talks')

@@ -17,7 +17,7 @@
 import defaultPageTransition from '../composables/transitions/defaultPageTransition';
 
 const route = useRoute();
-const page = await usePageSetup();
+const page = await usePageSetup(route.name);
 
 useHead(() => {
   const meta = {
