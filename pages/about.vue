@@ -15,15 +15,10 @@
 <!--|== Scripts ================================================================================ -->
 <script setup>
 const route = useRoute();
-const { data } = await useFetch(`api/pages?slug=${route.name}`);
+const data = await usePageSetup(route.name);
 
 useHead(() => {
-  const meta = {
-    title: data.value.meta_title,
-    desc: data.value.meta_description,
-    img: data.value.meta_image
-  };
-  return useMetaData(route, meta);
+  return useMetaData(route, data.value);
 });
 </script>
 

@@ -1,4 +1,4 @@
-export const usePageSetup = async (routeName) => {
+const usePageSetup = async (routeName) => {
   const client = useSupabaseClient();
   const { data } = await useAsyncData('page', async () => {
     const { data, error } = await client.from('pages').select('*').eq('slug', routeName).single();
@@ -8,3 +8,5 @@ export const usePageSetup = async (routeName) => {
 
   return data;
 };
+
+export default usePageSetup;
