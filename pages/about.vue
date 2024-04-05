@@ -19,7 +19,7 @@ const route = useRoute();
 
 const client = useSupabaseClient();
 const { data:page } = await useAsyncData('page', async () => {
-  const { data, error } = await client.from('pages').select('*').eq('slug', route.name).single();
+  const { data, error } = await client.from('pages').select('*').eq('slug', 'about').single();
   if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
   return data;
 });
