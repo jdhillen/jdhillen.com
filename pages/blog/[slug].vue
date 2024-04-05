@@ -29,10 +29,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../../composables/transitions/defaultPageTransition';
-
-const route = useRoute();
 const client = useSupabaseClient();
+const route = useRoute();
 
 const { data: blog } = await useAsyncData('blog', async () => {
   const { data } = await client.from('blog').select().eq('slug', route.params.slug);
@@ -46,10 +44,6 @@ useHead(() => {
     img: blog.value.meta_image
   };
   return useMetaData(route, meta);
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 </script>
 

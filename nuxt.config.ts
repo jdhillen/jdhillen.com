@@ -1,5 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  ssr: false,
+  
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/vendor/_reset.scss',
@@ -91,7 +93,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/']
+      routes: ['/rss']
     }
   },
 
