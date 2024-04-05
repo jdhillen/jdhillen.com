@@ -28,7 +28,12 @@ import defaultPageTransition from '../../composables/transitions/defaultPageTran
 
 const client = useSupabaseClient();
 const route = useRoute();
-const page = await usePageSetup(route.name);
+
+const { data:page } = await useAsyncData('page', async () => {
+  const { data, error } = await client.from('pages').select().eq('slug', route.name);
+  if (error) throw createError({ statusCode: 404, statusMessage: 'Connection to database has been lost.' });
+  return data[0];
+});
 
 useHead(() => {
   const meta = {
