@@ -57,7 +57,7 @@
 const client = useSupabaseClient();
 
 const { data: social } = await useAsyncData('socials', async () => {
-  const { data } = await client.from('socials').select('*').order('order', { ascending: true });
+  const { data } = await client.from('socials').select('*').eq('enabled', true).order('order', { ascending: true });
   return data;
 });
 
