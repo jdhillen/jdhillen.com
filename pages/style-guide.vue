@@ -425,7 +425,13 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script setup></script>
+<script setup>
+import defaultPageTransition from '../composables/transitions/composable';
+
+definePageMeta({
+  pageTransition: defaultPageTransition,
+});
+</script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>

@@ -6,7 +6,7 @@ const { toggleTransitionComplete } = useTransitionComposable();
 const blurLevel = 10;
 
 const pageTransition = {
-  name: 'default-page-transiton',
+  name: 'default-page-transition',
   mode: 'out-in',
   appear: true,
   css: false,
