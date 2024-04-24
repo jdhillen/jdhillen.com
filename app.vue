@@ -14,7 +14,7 @@
 <script setup></script>
 
 <!--|== CSS ==================================================================================== -->
-<style lang="scss" scoped>
+<style lang="scss">
 .app {
   flex: 1;
   height: auto !important;

@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: true,
+    pageTransition: false,
     head: {
       meta: [
         {

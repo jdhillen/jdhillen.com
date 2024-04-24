@@ -76,7 +76,7 @@ onMounted(() => {
     &--img {
       width: 30px;
       height: 30px;
-      filter: drop-shadow(2px 2px 3px black(0.2));
+      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 1));
     }
   }
 
@@ -98,6 +98,7 @@ onMounted(() => {
       text-transform: uppercase;
       padding: 0 1.5rem;
       text-decoration: none;
+      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 1));
     }
   }
 
@@ -149,6 +150,7 @@ onMounted(() => {
       font-family: 'Open Sans Bold';
       padding: 5px 0;
       text-decoration: none;
+      filter: drop-shadow(1px 2px 5px rgba(0, 0, 0, 1));
     }
   }
 }
