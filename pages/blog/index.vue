@@ -29,17 +29,11 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../composables/transitions/composable';
-
 const route = useRoute();
 const data = await usePageSetup(route.name);
 
 useHead(() => {
   return useMetaData(route, data.value);
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 
 const client = useSupabaseClient();

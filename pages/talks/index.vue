@@ -24,8 +24,6 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import defaultPageTransition from '../composables/transitions/composable';
-
 const route = useRoute();
 const data = await usePageSetup(route.name);
 
@@ -40,10 +38,6 @@ const { data: talks } = await useAsyncData('talks', async () => {
     .eq('enabled', 'TRUE')
     .order('id', { ascending: true })
   return data;
-});
-
-definePageMeta({
-  pageTransition: defaultPageTransition,
 });
 </script>
 

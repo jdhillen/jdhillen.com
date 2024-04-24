@@ -33,7 +33,10 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: true,
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    },
     head: {
       meta: [
         {

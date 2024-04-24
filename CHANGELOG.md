@@ -4,6 +4,26 @@
 
 ---
 
+## [v1.0.2](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.2) - 2024-04-24
+
+### Added
+
+- Page transitions are back with using Nuxt Page Transitions
+
+### Removed
+
+- GSAP page transitions and composable.
+
+### Update
+
+- Version bump => v1.0.2
+- @nuxtjs/mdc => v0.7.0
+- @nuxtjs/sitemap => v5.1.4
+- @nuxtjs/supabase => v1.2.1
+- sass => v1.75.0
+
+---
+
 ## [v1.0.1](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.1) - 2024-04-23
 
 ### Added
