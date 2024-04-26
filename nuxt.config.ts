@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxtjs/sitemap',
     'nuxt-gtag',
+    "@nuxt/image"
   ],
 
   runtimeConfig: {
@@ -33,7 +34,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: false,
+    pageTransition: true,
     head: {
       meta: [
         {

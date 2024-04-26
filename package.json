@@ -16,6 +16,7 @@
     "lint:fix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.6.0",
     "@nuxtjs/mdc": "^0.7.0",
     "@nuxtjs/robots": "^3.0.0",
     "@nuxtjs/sitemap": "^5.1.4",
