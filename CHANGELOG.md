@@ -10,10 +10,12 @@
 
 - GSAP page transitions and composable.
 - @nuxt/image for all images.
+- Server apis for Talks and Blog.
 
 ### Update
 
 - Version bump => v1.0.3
+- Updated Talks and Blogs to use new server files for API calls.
 
 ### Removed
 

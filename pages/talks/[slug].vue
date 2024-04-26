@@ -1,10 +1,10 @@
 <!--|== Template =============================================================================== -->
 <template>
   <section class="page talk">
-    <div class="container" v-if="talk">
+    <div class="container" v-if="data">
       <div class="row">
         <div class="twelve columns">
-          <h1>{{ talk.name }}</h1>
+          <h1>{{ data.name }}</h1>
         </div>
       </div>
       <div class="row">
@@ -12,10 +12,10 @@
           <NuxtImg
             preload
             class="talk__image"
-            :src="talk.thumbnail"
-            :alt="talk.name"
+            :src="data.thumbnail"
+            :alt="data.name"
           />
-          <MDC :value="talk.body" tag="article" />
+          <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
@@ -26,24 +26,11 @@
 <script setup>
 import transitionConfig from '../helpers/transitionConfig';
 
-const client = useSupabaseClient();
 const route = useRoute();
-
-const { data: talk } = await useAsyncData('talk', async () => {
-  const { data } = await client.from('talks')
-    .select('*, videos:talks_videos(title, date, url)')
-    .eq('slug', route.params.slug)
-    .order('date', { referencedTable: 'talks_videos', ascending: true });
-  return data[0];
-});
+const { data } = await useFetch(`/api/talks?slug=${route.params.slug}`);
 
 useHead(() => {
-  const meta = {
-    title: talk.value.meta_title,
-    desc: talk.value.meta_description,
-    img: talk.value.meta_image
-  };
-  return useMetaData(route, meta);
+  return useMetaData(route, data.value);
 });
 
 definePageMeta({

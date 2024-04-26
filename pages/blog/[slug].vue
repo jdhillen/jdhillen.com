@@ -4,11 +4,11 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns">
-          <h1>{{ blog.title }}</h1>
+          <h1>{{ data.title }}</h1>
           <div class="post__subhead">
-            <div class="post__date">{{ usePostDate(blog.created_at) }}</div>
+            <div class="post__date">{{ usePostDate(data.created_at) }}</div>
             <div class="post__time">
-              {{ calcReadingTime(blog.body) }} minute read
+              {{ calcReadingTime(data.body) }} minute read
             </div>
           </div>
         </div>
@@ -18,10 +18,10 @@
           <NuxtImg
             preload
             class="post__image"
-            :src="blog.meta_image"
-            :alt="blog.meta_title"
+            :src="data.meta_image"
+            :alt="data.meta_title"
           />
-          <MDC :value="blog.body" tag="article" />
+          <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
@@ -32,21 +32,11 @@
 <script setup>
 import transitionConfig from '../helpers/transitionConfig';
 
-const client = useSupabaseClient();
 const route = useRoute();
-
-const { data: blog } = await useAsyncData('blog', async () => {
-  const { data } = await client.from('blog').select().eq('slug', route.params.slug);
-  return data[0];
-});
+const { data } = await useFetch(`/api/blog?slug=${route.params.slug}`);
 
 useHead(() => {
-  const meta = {
-    title: blog.value.meta_title,
-    desc: blog.value.meta_description,
-    img: blog.value.meta_image
-  };
-  return useMetaData(route, meta);
+  return useMetaData(route, data.value);
 });
 
 definePageMeta({
