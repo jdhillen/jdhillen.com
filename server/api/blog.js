@@ -15,7 +15,8 @@ export default defineEventHandler(async (event) => {
     return data;
   } else {
     const { data } = await client.from('blog')
-      .select('*');
+      .select('*')
+      .order('id', { ascending: false });
     return data;
   }
 });

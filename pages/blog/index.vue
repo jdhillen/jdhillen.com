@@ -33,6 +33,7 @@ import transitionConfig from '../helpers/transitionConfig';
 
 const route = useRoute();
 const { data } = await useFetch(`/api/pages?slug=${route.name}`);
+const { data: blogs } = await useFetch('/api/blog');
 
 useHead(() => {
   return useMetaData(route, data.value);
@@ -40,12 +41,6 @@ useHead(() => {
 
 definePageMeta({
   pageTransition: transitionConfig,
-});
-
-const client = useSupabaseClient();
-const { data: blogs } = await useAsyncData('blogs', async () => {
-  const { data } = await client.from('blog').select('*').order('id', { ascending: false })
-  return data;
 });
 </script>
 

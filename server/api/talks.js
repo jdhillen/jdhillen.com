@@ -16,7 +16,9 @@ export default defineEventHandler(async (event) => {
     return data;
   } else {
     const { data } = await client.from('talks')
-      .select('*');
+    .select('*')
+    .eq('enabled', 'TRUE')
+    .order('id', { ascending: true })
     return data;
   }
 });
