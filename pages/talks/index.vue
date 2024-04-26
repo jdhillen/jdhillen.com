@@ -24,20 +24,18 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+import transitionConfig from '../helpers/transitionConfig';
+
 const route = useRoute();
-const data = await usePageSetup(route.name);
+const { data } = await useFetch(`/api/pages?slug=${route.name}`);
+const { data: talks } = await useFetch('/api/talks');
 
 useHead(() => {
   return useMetaData(route, data.value);
 });
 
-const client = useSupabaseClient();
-const { data: talks } = await useAsyncData('talks', async () => {
-  const { data } = await client.from('talks')
-    .select('*')
-    .eq('enabled', 'TRUE')
-    .order('id', { ascending: true })
-  return data;
+definePageMeta({
+  pageTransition: transitionConfig,
 });
 </script>
 

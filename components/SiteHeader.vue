@@ -4,7 +4,7 @@
     <div class="nav__main">
       <div class="nav__logo">
         <NuxtLink to="/" tabindex="0" class="nav__logo--link" aria-label="Home">
-          <img class="nav__logo--img" src="@/assets/img/logos/square.svg" alt="Home"/>
+          <img class="nav__logo--img" src="@/assets/img/logos/square.svg" alt="Home" />
         </NuxtLink>
       </div>
       <div class="nav__desktop">
@@ -76,7 +76,6 @@ onMounted(() => {
     &--img {
       width: 30px;
       height: 30px;
-      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 1));
     }
   }
 
@@ -98,7 +97,6 @@ onMounted(() => {
       text-transform: uppercase;
       padding: 0 1.5rem;
       text-decoration: none;
-      filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 1));
     }
   }
 

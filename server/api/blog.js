@@ -8,14 +8,15 @@ export default defineEventHandler(async (event) => {
   const { slug } = getQuery(event);
 
   if (slug) {
-    const { data } = await client.from('pages')
+    const { data } = await client.from('blog')
       .select('*')
       .eq('slug', slug)
       .single();
     return data;
   } else {
-    const { data } = await client.from('pages')
-      .select('*');
+    const { data } = await client.from('blog')
+      .select('*')
+      .order('id', { ascending: false });
     return data;
   }
 });

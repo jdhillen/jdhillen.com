@@ -8,14 +8,17 @@ export default defineEventHandler(async (event) => {
   const { slug } = getQuery(event);
 
   if (slug) {
-    const { data } = await client.from('pages')
-      .select('*')
+    const { data } = await client.from('talks')
+      .select('*, videos:talks_videos(title, date, url)')
       .eq('slug', slug)
+      .order('date', { referencedTable: 'talks_videos', ascending: true })
       .single();
     return data;
   } else {
-    const { data } = await client.from('pages')
-      .select('*');
+    const { data } = await client.from('talks')
+    .select('*')
+    .eq('enabled', 'TRUE')
+    .order('id', { ascending: true })
     return data;
   }
 });

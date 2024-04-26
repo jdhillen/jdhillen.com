@@ -1,7 +1,7 @@
 <!--|== Template =============================================================================== -->
 <template>
   <NuxtLink :to="'/talks/' + props.slug" class="talk">
-    <img class="talk__image" :src="props.thumbnail" :alt="props.name">
+    <NuxtImg preload class="talk__image" :src="props.thumbnail" :alt="props.name" />
     <h5 class="talk__headline">{{ props.name }}</h5>
     <p class="talk__description">{{ props.description }}</p>
   </NuxtLink>
