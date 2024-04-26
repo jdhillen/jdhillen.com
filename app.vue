@@ -11,7 +11,14 @@
 </template>
 
 <!--|== Scripts ================================================================================ -->
-<script setup></script>
+<script setup>
+import { useTransitionComposable } from './composables/pageTransitions';
+const { toggleTransitionComplete } = useTransitionComposable();
+
+onMounted(() => {
+  toggleTransitionComplete(true);
+});
+</script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss">

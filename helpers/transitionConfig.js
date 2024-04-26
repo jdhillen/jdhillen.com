@@ -3,15 +3,22 @@ import { useTransitionComposable } from '../composables/pageTransitions';
 
 const { toggleTransitionComplete } = useTransitionComposable();
 
+const blurLevel = 10;
+
 const pageTransition = {
   name: 'page-transition',
   mode: 'out-in',
+  appear: true,
   css: false,
   onEnter: (el, done) => {
-    gsap.set(el, { opacity: 0 });
+    gsap.set(el, {
+      opacity: 0,
+      "--myBlur": blurLevel,
+    });
     gsap.to(el, {
       opacity: 1,
-      duration: 0.25,
+      "--myBlur": 0,
+      duration: 0.5,
       ease: 'expo.in',
       onComplete: () => {
         toggleTransitionComplete(true);
@@ -23,7 +30,8 @@ const pageTransition = {
     toggleTransitionComplete(false);
     gsap.to(el, {
       opacity: 0,
-      duration: 0.25,
+      "--myBlur": blurLevel,
+      duration: 0.5,
       ease: 'expo.out',
       onComplete: () => {
         done();

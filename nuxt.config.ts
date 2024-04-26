@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxtjs/sitemap',
     'nuxt-gtag',
+    "@nuxt/image"
   ],
 
   runtimeConfig: {
