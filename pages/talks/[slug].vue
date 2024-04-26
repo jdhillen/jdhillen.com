@@ -9,7 +9,8 @@
       </div>
       <div class="row">
         <div class="twelve columns">
-          <img
+          <NuxtImg
+            preload
             class="talk__image"
             :src="talk.thumbnail"
             :alt="talk.name"

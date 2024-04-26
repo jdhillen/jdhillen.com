@@ -4,6 +4,23 @@
 
 ---
 
+## [v1.0.3](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.3) - 2024-04-26
+
+### Added
+
+- GSAP page transitions and composable.
+- @nuxt/image for all images.
+
+### Update
+
+- Version bump => v1.0.3
+
+### Removed
+
+- Drop Shadows in Header
+
+---
+
 ## [v1.0.2](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.2) - 2024-04-24
 
 ### Removed

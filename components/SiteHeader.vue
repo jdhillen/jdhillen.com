@@ -4,7 +4,7 @@
     <div class="nav__main">
       <div class="nav__logo">
         <NuxtLink to="/" tabindex="0" class="nav__logo--link" aria-label="Home">
-          <img class="nav__logo--img" src="@/assets/img/logos/square.svg" alt="Home"/>
+          <NuxtImg preload class="nav__logo--img" src="@/assets/img/logos/square.svg" alt="Home" />
         </NuxtLink>
       </div>
       <div class="nav__desktop">

@@ -15,7 +15,8 @@
       </div>
       <div class="row">
         <div class="twelve columns">
-          <img
+          <NuxtImg
+            preload
             class="post__image"
             :src="blog.meta_image"
             :alt="blog.meta_title"
