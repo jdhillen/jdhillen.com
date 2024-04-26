@@ -23,6 +23,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+import transitionConfig from '../helpers/transitionConfig';
+
 const client = useSupabaseClient();
 const route = useRoute();
 
@@ -41,6 +43,10 @@ useHead(() => {
     img: talk.value.meta_image
   };
   return useMetaData(route, meta);
+});
+
+definePageMeta({
+  pageTransition: transitionConfig,
 });
 </script>
 

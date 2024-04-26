@@ -13,11 +13,17 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+import transitionConfig from '../helpers/transitionConfig';
+
 const route = useRoute();
 const data = await usePageSetup(route.name);
 
 useHead(() => {
   return useMetaData(route, data.value);
+});
+
+definePageMeta({
+  pageTransition: transitionConfig,
 });
 </script>
 
