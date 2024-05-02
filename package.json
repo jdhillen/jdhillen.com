@@ -1,6 +1,6 @@
 {
   "name": "jdhillen.com",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -24,7 +24,7 @@
     "@types/rss": "^0.0.32",
     "nuxt": "^3.11.2",
     "nuxt-gtag": "^2.0.5",
-    "sass": "^1.75.0"
+    "sass": "^1.76.0"
   },
   "dependencies": {
     "gsap": "^3.12.5",

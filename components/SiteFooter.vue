@@ -54,17 +54,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const client = useSupabaseClient();
-
-const { data: social } = await useAsyncData('socials', async () => {
-  const { data } = await client.from('socials').select('*').eq('enabled', true).order('order', { ascending: true });
-  return data;
-});
-
-const { data: contact } = await useAsyncData('profiles', async () => {
-  const { data } = await client.from('profiles').select('*').eq('id', 'ef85c3cf-b659-458e-a900-301fc4fa26a0');
-  return data[0];
-});
+const { data: social } = await useFetch('/api/socials');
+const { data: contact } = await useFetch('/api/profiles');
 </script>
 
 <!--|== CSS ==================================================================================== -->
