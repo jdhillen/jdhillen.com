@@ -33,7 +33,7 @@
 import transitionConfig from '../helpers/transitionConfig';
 
 const route = useRoute();
-const { data } = await useFetch(`/api/blog?slug=${route.params.slug}`);
+const { data } = await useFetch(`/api/blogs?slug=${route.params.slug}`);
 
 useHead(() => {
   return useMetaData(route, data.value);
