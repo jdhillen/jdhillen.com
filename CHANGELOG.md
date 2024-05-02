@@ -4,6 +4,22 @@
 
 ---
 
+## [v1.0.4](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.4) - 2024-05-02
+
+### Added
+
+- Server APIs for Socials.
+- Server APIs for Profiles.
+
+### Update
+
+- Version bump => v1.0.4
+- sass => v1.76.0
+- Blog API call now checks if enabled and orders them by created date.
+- Footer now runs off of Server APIs
+
+---
+
 ## [v1.0.3](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.3) - 2024-04-26
 
 ### Added
