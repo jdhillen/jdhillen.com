@@ -4,6 +4,20 @@
 
 ---
 
+## [v1.0.5](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.5) - 2024-05-23
+
+### Update
+
+- Version bump => v1.0.5
+- @nuxt/image => v1.7.0
+- @nuxtjs/mdc => v0.7.1
+- @nuxtjs/sitemap => v5.2.0
+- @nuxtjs/supabase => v1.2.2
+- nuxt-gtag => v2.0.6
+- sass => v1.77.2
+
+---
+
 ## [v1.0.4](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.4) - 2024-05-02
 
 ### Added
