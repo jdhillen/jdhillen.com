@@ -1,7 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
-  
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/vendor/_reset.scss',
@@ -55,15 +55,14 @@ export default defineNuxtConfig({
         },
         {
           rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
-          href: '/favicon-32x32.png'
+          sizes: '48x48',
+          href: '/favicon.ico'
         },
         {
           rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '/favicon-16x16.png'
+          type: 'image/svg+xml',
+          sizes: 'any',
+          href: '/favicon.svg'
         },
         { rel: 'manifest', href: '/site.webmanifest' },
         { rel: 'mask-icon', color: '#333333', href: '/safari-pinned-tab.svg' },
@@ -130,6 +129,7 @@ export default defineNuxtConfig({
         h6: false,
       }
     },
-  }
+  },
 
+  compatibilityDate: '2024-09-04'
 });

@@ -1,6 +1,6 @@
 {
   "name": "jdhillen.com",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -16,15 +16,15 @@
     "lint:fix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "devDependencies": {
-    "@nuxt/image": "^1.7.0",
-    "@nuxtjs/mdc": "^0.7.1",
-    "@nuxtjs/robots": "^3.0.0",
-    "@nuxtjs/sitemap": "^5.2.0",
-    "@nuxtjs/supabase": "^1.2.2",
+    "@nuxt/image": "^1.8.0",
+    "@nuxtjs/mdc": "^0.8.3",
+    "@nuxtjs/robots": "^4.1.6",
+    "@nuxtjs/sitemap": "^6.0.1",
+    "@nuxtjs/supabase": "^1.4.0",
     "@types/rss": "^0.0.32",
-    "nuxt": "^3.11.2",
-    "nuxt-gtag": "^2.0.6",
-    "sass": "^1.77.2"
+    "nuxt": "^3.13.1",
+    "nuxt-gtag": "^3.0.1",
+    "sass": "^1.78.0"
   },
   "dependencies": {
     "gsap": "^3.12.5",
