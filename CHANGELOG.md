@@ -4,6 +4,26 @@
 
 ---
 
+## [v1.0.6](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.6) - 2024-09-04
+
+### Added
+
+- New SVG Favicon
+
+### Update
+
+- Version bump => v1.0.6
+- @nuxt/image => v1.8.0
+- @nuxtjs/mdc => v0.8.3
+- @nuxtjs/robots => v4.1.6
+- @nuxtjs/sitemap => v6.0.1
+- @nuxtjs/supabase => v1.4.0
+- nuxt => v3.13.1
+- nuxt-gtag => v3.0.1
+- sass => v1.78.0
+
+---
+
 ## [v1.0.5](https://github.com/jdhillen/jdhillen.com/releases/tag/1.0.5) - 2024-05-23
 
 ### Update

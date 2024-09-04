@@ -1,7 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: false,
-  
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/vendor/_reset.scss',
@@ -129,6 +129,7 @@ export default defineNuxtConfig({
         h6: false,
       }
     },
-  }
+  },
 
+  compatibilityDate: '2024-09-04'
 });
