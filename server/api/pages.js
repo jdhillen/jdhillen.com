@@ -1,21 +1,32 @@
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseClient } from '../utils/supabase';
 
 export default defineEventHandler(async (event) => {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const client = createClient(supabaseUrl, supabaseKey);
-
+  const supabase = getSupabaseClient();
   const { slug } = getQuery(event);
 
-  if (slug) {
-    const { data } = await client.from('pages')
-      .select('*')
-      .eq('slug', slug)
-      .single();
-    return data;
-  } else {
-    const { data } = await client.from('pages')
-      .select('*');
-    return data;
+  try {
+    if (slug) {
+      const { data, error } = await supabase
+        .from('pages')
+        .select('*')
+        .eq('slug', slug)
+        .single();
+      
+      if (error) throw error;
+      return data;
+    } else {
+      const { data, error } = await supabase
+        .from('pages')
+        .select('*');
+      
+      if (error) throw error;
+      return data;
+    }
+  } catch (error) {
+    console.error('Error fetching pages:', error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: error.message
+    });
   }
 });

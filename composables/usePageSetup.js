@@ -1,4 +1,3 @@
-import transitionConfig from '../helpers/transitionConfig';
 import useMetaData from './useMetaData';
 
 /**
@@ -31,10 +30,8 @@ export default function usePageSetup(options = {}) {
     return data.value ? useMetaData(route, data.value) : {};
   });
   
-  // Apply page transition
-  definePageMeta({
-    pageTransition: transitionConfig,
-  });
+  // Note: Page transitions are handled globally in plugins/transitions.js
+  // No need to configure transitions per-page anymore
   
   // If needed, fetch a list of items (for index pages)
   let listData = null;

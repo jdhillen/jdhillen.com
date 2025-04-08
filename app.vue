@@ -12,12 +12,8 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import { useTransitionComposable } from './composables/pageTransitions';
-const { toggleTransitionComplete } = useTransitionComposable();
-
-onMounted(() => {
-  toggleTransitionComplete(true);
-});
+// All transition logic is now in plugins/transitions.js
+// No need to import or initialize transitions here
 </script>
 
 <!--|== CSS ==================================================================================== -->

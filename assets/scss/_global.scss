@@ -96,17 +96,7 @@ h6 {
 }
 
 // ==|== Page Transitions ==========================================================================
-.page-enter-active,
-.page-leave-active {
-  transition-property: opacity;
-  transition-timing-function: ease-out;
-  transition-duration: 500ms;
-}
-
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+// Using GSAP for transitions - CSS transitions not needed
 
 // ==|== Tab Outline ===============================================================================
 *:focus-visible {

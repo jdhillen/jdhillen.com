@@ -34,7 +34,15 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: true,
+    // Using simple names that our plugin will override with GSAP
+    pageTransition: {
+      name: 'page-transition',
+      mode: 'out-in'
+    },
+    layoutTransition: {
+      name: 'layout-transition',
+      mode: 'out-in'
+    },
     head: {
       meta: [
         {

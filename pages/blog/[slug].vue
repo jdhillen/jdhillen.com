@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page post">
+  <section class="page post" v-if="data">
     <div class="container">
       <div class="row">
         <div class="twelve columns">
@@ -26,6 +26,7 @@
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->

@@ -1,13 +1,23 @@
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseClient } from '../utils/supabase';
 
 export default defineEventHandler(async (event) => {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const client = createClient(supabaseUrl, supabaseKey);
+  const supabase = getSupabaseClient();
+  const PROFILE_ID = 'ef85c3cf-b659-458e-a900-301fc4fa26a0';
 
-  const { data } = await client.from('profiles')
-    .select('*')
-    .eq('id', 'ef85c3cf-b659-458e-a900-301fc4fa26a0')
-    .single();
-  return data;
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', PROFILE_ID)
+      .single();
+    
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: error.message
+    });
+  }
 });

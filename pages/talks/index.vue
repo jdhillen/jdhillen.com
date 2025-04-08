@@ -1,16 +1,15 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page">
+  <section class="page" v-if="data && talks">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="data">
+        <div class="twelve columns">
           <h1>{{ data.name }}</h1>
           <MDC :value="data.body" tag="article" />
         </div>
       </div>
       <div class="talks">
         <TalkCard
-          v-if="talks"
           v-for="talk in talks"
           :slug="talk.slug"
           :name="talk.name"
@@ -20,6 +19,7 @@
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->

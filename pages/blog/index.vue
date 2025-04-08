@@ -1,14 +1,14 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page blog">
+  <section class="page blog" v-if="data && blogs">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="data">
+        <div class="twelve columns">
           <h1>{{ data.name }}</h1>
           <MDC :value="data.body" tag="article" />
         </div>
       </div>
-      <div class="row" v-if="blogs" v-for="blog in blogs">
+      <div class="row" v-for="blog in blogs">
         <NuxtLink :to="'/blog/' + blog.slug" class="post">
           <div class="twelve columns">
             <h3>{{ blog.title }}</h3>
@@ -25,6 +25,7 @@
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->

@@ -1,7 +1,7 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page talk">
-    <div class="container" v-if="data">
+  <section class="page talk" v-if="data">
+    <div class="container">
       <div class="row">
         <div class="twelve columns">
           <h1>{{ data.name }}</h1>
@@ -20,6 +20,7 @@
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->

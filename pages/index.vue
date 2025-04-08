@@ -1,14 +1,15 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page home">
+  <section class="page home" v-if="data">
     <div class="container">
       <div class="row">
-        <div class="twelve columns" v-if="data">
+        <div class="twelve columns">
           <MDC :value="data.body" tag="article" />
         </div>
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->
