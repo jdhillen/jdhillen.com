@@ -24,17 +24,9 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import transitionConfig from '../helpers/transitionConfig';
-
-const route = useRoute();
-const { data } = await useFetch(`/api/talks?slug=${route.params.slug}`);
-
-useHead(() => {
-  return useMetaData(route, data.value);
-});
-
-definePageMeta({
-  pageTransition: transitionConfig,
+const { data } = usePageSetup({
+  apiEndpoint: 'talks',
+  useParams: true
 });
 </script>
 

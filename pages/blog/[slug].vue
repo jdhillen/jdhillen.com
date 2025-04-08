@@ -30,17 +30,9 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import transitionConfig from '../helpers/transitionConfig';
-
-const route = useRoute();
-const { data } = await useFetch(`/api/blogs?slug=${route.params.slug}`);
-
-useHead(() => {
-  return useMetaData(route, data.value);
-});
-
-definePageMeta({
-  pageTransition: transitionConfig,
+const { data } = usePageSetup({
+  apiEndpoint: 'blogs',
+  useParams: true
 });
 </script>
 
