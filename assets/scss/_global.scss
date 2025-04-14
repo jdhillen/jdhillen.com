@@ -1,6 +1,7 @@
 // =================================================================================================
 // ---- Globals ----
 // =================================================================================================
+@use "sass:meta";
 *,
 *:after,
 *:before {
@@ -21,7 +22,7 @@ body {
   padding: 0;
   display: block;
   overflow-x: hidden;
-  @extend .smooth;
+  @extend .smooth !optional;
 
   @media (min-width: 750px) {
     font-size: 16px
@@ -103,5 +104,9 @@ h6 {
   /* remove default focus style */
   outline: none;
   /* custom focus styles */
-  box-shadow: 0 0 2px 2px $blue-lite;
+  @if meta.variable-exists(blue-lite) {
+    box-shadow: 0 0 2px 2px $blue-lite;
+  } @else {
+    box-shadow: 0 0 2px 2px #1eaedb;
+  }
 }

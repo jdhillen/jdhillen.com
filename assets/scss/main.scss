@@ -1,7 +1,19 @@
+// Main SCSS file for the application
+@use 'sass:map';
+@use 'sass:meta';
 
-@import 'colors';
-@import 'typography';
-@import 'breakpoints';
-@import 'global';
-@import 'icons';
-@import 'transitions';
+// Import all partials
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'breakpoints' as *;
+@use 'global' as *;
+@use 'icons' as *;
+@use 'transitions' as *;
+
+// Forward all partials
+@forward 'colors';
+@forward 'typography';
+@forward 'breakpoints';
+@forward 'global';
+@forward 'icons';
+@forward 'transitions';

@@ -16,18 +16,19 @@
     "lint:fix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "devDependencies": {
-    "@nuxt/image": "^1.8.0",
-    "@nuxtjs/mdc": "^0.8.3",
-    "@nuxtjs/robots": "^4.1.6",
-    "@nuxtjs/sitemap": "^6.0.1",
-    "@nuxtjs/supabase": "^1.4.0",
+    "@nuxt/image": "^1.10.0",
+    "@nuxtjs/mdc": "^0.16.1",
+    "@nuxtjs/robots": "^5.2.9",
+    "@nuxtjs/sitemap": "^7.2.10",
+    "@nuxtjs/supabase": "^1.5.0",
     "@types/rss": "^0.0.32",
-    "nuxt": "^3.13.1",
-    "nuxt-gtag": "^3.0.1",
-    "sass": "^1.78.0"
+    "nuxt": "^3.16.2",
+    "nuxt-gtag": "^3.0.2",
+    "sass": "^1.86.3"
   },
   "dependencies": {
-    "gsap": "^3.12.5",
+    "gsap": "^3.12.7",
+    "marked": "^15.0.8",
     "rss": "^1.2.2"
   }
 }

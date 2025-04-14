@@ -1,6 +1,7 @@
 // =================================================================================================
 // ---- Breakpoints ----
 // =================================================================================================
+@use "sass:map";
 
 /* Variables */
 $breakpoint-xs: 480px;
@@ -41,9 +42,9 @@ $breakpoints: (
  * }
  */
  @mixin breakpoint ($point) {
-  @if map-has-key($breakpoints, $point) {
+  @if map.has-key($breakpoints, $point) {
     // Prints a media query based on the value
-    @media screen and (min-width: map-get($breakpoints, $point)) {
+    @media screen and (min-width: map.get($breakpoints, $point)) {
       @content;
     }
   }
