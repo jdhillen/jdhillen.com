@@ -1,0 +1,21 @@
+// Page transition styles - these provide a fallback for when GSAP isn't active
+.page-transition-enter-active,
+.page-transition-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.page-transition-enter-from,
+.page-transition-leave-to {
+  opacity: 0;
+}
+
+// Layout transitions
+.layout-transition-enter-active,
+.layout-transition-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.layout-transition-enter-from,
+.layout-transition-leave-to {
+  opacity: 0;
+}

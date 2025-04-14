@@ -1,7 +1,10 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page talk">
-    <div class="container" v-if="data">
+  <section
+    class="page talk"
+    v-if="data"
+  >
+    <div class="container">
       <div class="row">
         <div class="twelve columns">
           <h1>{{ data.name }}</h1>
@@ -15,47 +18,45 @@
             :src="data.thumbnail"
             :alt="data.name"
           />
-          <MDC :value="data.body" tag="article" />
+          <MDC
+            :value="data.body"
+            tag="article"
+          />
         </div>
       </div>
     </div>
   </section>
+  <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-import transitionConfig from '../helpers/transitionConfig';
-
-const route = useRoute();
-const { data } = await useFetch(`/api/talks?slug=${route.params.slug}`);
-
-useHead(() => {
-  return useMetaData(route, data.value);
-});
-
-definePageMeta({
-  pageTransition: transitionConfig,
-});
+  const { data } = usePageSetup({
+    apiEndpoint: 'talks',
+    useParams: true
+  });
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.talk {
-  &__subhead {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  .talk {
+    &__subhead {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__date,
+    &__time {
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      background-color: rgb(0 0 0 / 80%);
+    }
   }
-  &__date,
-  &__time {
-    font-style: italic;
-    margin-bottom: 2rem;
-  }
-  &__image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    background-color: black(0.8);
-  }
-}
 </style>

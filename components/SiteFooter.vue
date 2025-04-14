@@ -7,23 +7,21 @@
           <div class="twelve columns">
             <ul v-if="social">
               <li v-for="item in social">
-                <NuxtLink 
+                <NuxtLink
                   :to="item.url"
                   target="_blank"
                   :alt="item.name"
                   :aria-label="item.name"
                   class="icon icon__social"
                   :class="['icon__' + item.icon]"
-                >
-                </NuxtLink>
+                />
               </li>
               <li v-if="contact">
-                <NuxtLink 
+                <NuxtLink
                   :to="'mailto:' + contact.email + '?subject=Hello'"
                   class="icon icon__social icon__email"
                   aria-label="Email Me"
-                >
-                </NuxtLink>
+                />
               </li>
             </ul>
           </div>
@@ -41,8 +39,7 @@
                 target="_blank"
                 class="icon icon__nuxt"
                 aria-label="Nuxt.js"
-              >
-              </NuxtLink>
+              />
               by {{ contact.name }}
             </div>
           </div>
@@ -54,62 +51,60 @@
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const { data: social } = await useFetch('/api/socials');
-const { data: contact } = await useFetch('/api/profiles');
+  const { data: social } = await useFetch('/api/socials');
+  const { data: contact } = await useFetch('/api/profiles');
 </script>
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-
-.footer {
-  width: 100%;
-  text-align: center;
-
-  &__social {
+  .footer {
+    width: 100%;
     text-align: center;
-    padding: 1rem 0;
-    background-color: black(0.7);
 
-    ul {
-      margin: 0 auto;
-      padding: 0;
-      list-style-type: none;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+    &__social {
+      padding: 1rem 0;
+      text-align: center;
+      background-color: rgb(0 0 0 / 70%);
 
-      li {
+      ul {
         display: flex;
-        margin: 10px;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0 auto;
+        list-style-type: none;
 
-        a {
-          color: white(0.75);
-          transition: 300ms color;
-          width: 30px;
-          height: 30px;
+        li {
+          display: flex;
+          margin: 10px;
 
-          &:hover {
-            color: $white;
+          a {
+            width: 30px;
+            height: 30px;
+            color: rgb(255 255 255 / 75%);
+            transition: 300ms color;
+
+            &:hover {
+              color: $white;
+            }
           }
         }
       }
     }
-  }
 
-  &__copyright {
-    text-align: center;
-    padding: 25px 0;
-    background-color: black(0.8);
+    &__copyright {
+      padding: 25px 0;
+      text-align: center;
+      background-color: rgb(0 0 0 / 80%);
 
-    &--txt {
-      font-family: 'Open Sans Light';
-      font-size: 8px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: $white;
+      &--txt {
+        font-family: 'Open Sans Light', sans-serif;
+        font-size: 8px;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
     }
   }
-}
 </style>

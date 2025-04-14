@@ -1,13 +1,22 @@
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseClient } from '../utils/supabase';
 
-export default defineEventHandler(async (event) => {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const supabaseKey = process.env.SUPABASE_KEY;
-  const client = createClient(supabaseUrl, supabaseKey);
+export default defineEventHandler(async (_event) => {
+  const supabase = getSupabaseClient();
 
-  const { data } = await client.from('socials')
-    .select('*')
-    .eq('enabled', true)
-    .order('order', { ascending: true });
-  return data;
+  try {
+    const { data, error } = await supabase
+      .from('socials')
+      .select('*')
+      .eq('enabled', true)
+      .order('order', { ascending: true });
+
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error fetching socials:', error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: error.message
+    });
+  }
 });

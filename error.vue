@@ -1,13 +1,13 @@
 <!--|== Template =============================================================================== -->
 <template>
   <div class="app">
-    <SiteHeader/>
+    <SiteHeader />
     <main>
       <section class="page fourOhFour">
         <div class="container">
           <div class="row">
             <div class="twelve columns">
-              <h1>{{ error.statusCode }}</h1>
+              <h1>{{ props.error.statusCode }}</h1>
               <button @click="handleError">Return Home</button>
             </div>
           </div>
@@ -17,24 +17,22 @@
   </div>
 </template>
 
-
 <!--|== Scripts ================================================================================ -->
 <script setup>
-const props = defineProps({
-  error: Object
-})
+  const props = defineProps({
+    error: Object
+  });
 
-const handleError = () => clearError({ redirect: '/' })
+  const handleError = () => clearError({ redirect: '/' });
 </script>
-
 
 <!--|== CSS ==================================================================================== -->
 <style lang="scss" scoped>
-.app {
-  flex: 1;
-  height: auto !important;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+  .app {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 100%;
+  }
 </style>
