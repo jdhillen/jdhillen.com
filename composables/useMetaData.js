@@ -1,6 +1,6 @@
 const getMetaData = (route, meta) => {
   const siteUrl = import.meta.env.NUXT_PUBLIC_SITE_URL || '';
-  
+
   const obj = {
     title: `${meta.meta_title} - J.D. Hillen`,
     htmlAttrs: {

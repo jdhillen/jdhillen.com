@@ -4,6 +4,6 @@ const calcReadingTime = (text) => {
   const time = Math.ceil(words / wpm);
 
   return time;
-}
+};
 
 export default calcReadingTime;

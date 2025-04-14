@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
         .eq('slug', slug)
         .order('id', { referencedTable: 'talks_videos', ascending: true })
         .single();
-      
+
       if (error) throw error;
       return data;
     } else {
@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
         .select('*')
         .eq('enabled', 'TRUE')
         .order('id', { ascending: true });
-      
+
       if (error) throw error;
       return data;
     }

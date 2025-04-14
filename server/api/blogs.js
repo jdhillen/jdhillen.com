@@ -6,12 +6,8 @@ export default defineEventHandler(async (event) => {
 
   try {
     if (slug) {
-      const { data, error } = await supabase
-        .from('blog')
-        .select('*')
-        .eq('slug', slug)
-        .single();
-      
+      const { data, error } = await supabase.from('blog').select('*').eq('slug', slug).single();
+
       if (error) throw error;
       return data;
     } else {
@@ -20,7 +16,7 @@ export default defineEventHandler(async (event) => {
         .select('*')
         .eq('enabled', 'TRUE')
         .order('created_at', { ascending: false });
-      
+
       if (error) throw error;
       return data;
     }

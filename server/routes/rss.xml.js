@@ -1,6 +1,7 @@
 // ==|== Imports ===================================================================================
-import RSS from 'rss';
 import { marked } from 'marked';
+import RSS from 'rss';
+
 import { getSupabaseClient } from '../utils/supabase';
 
 export default defineEventHandler(async (event) => {
@@ -23,26 +24,24 @@ export default defineEventHandler(async (event) => {
       language: 'en',
       image_url: `${siteUrl}/apple-touch-icon.png`,
       site_url: siteUrl,
-      feed_url: `${siteUrl}/rss.xml`,
+      feed_url: `${siteUrl}/rss.xml`
     });
 
-    posts.forEach(post => {
+    posts.forEach((post) => {
       // Convert markdown to HTML for RSS feed
       const htmlContent = post.body ? marked.parse(post.body) : '';
-      
+
       feed.item({
         title: post.title,
         url: `${siteUrl}/blog/${post.slug}`,
         description: post.description,
         date: post.created_at,
-        custom_elements: [
-          { 'content:encoded': htmlContent }
-        ]
+        custom_elements: [{ 'content:encoded': htmlContent }]
       });
     });
 
     const feedString = feed.xml({ indent: true });
-    
+
     event.node.res.setHeader('content-type', 'text/xml');
     event.node.res.end(feedString);
   } catch (e) {

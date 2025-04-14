@@ -3,13 +3,10 @@ export default defineNuxtConfig({
   ssr: false,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/scss/vendor/_reset.scss',
-    '@/assets/scss/vendor/_skeleton.scss'
-  ],
+  css: ['@/assets/scss/vendor/_reset.scss', '@/assets/scss/vendor/_skeleton.scss'],
 
   build: {
-    transpile: ['gsap'],
+    transpile: ['gsap']
   },
 
   modules: [
@@ -18,7 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxtjs/sitemap',
     'nuxt-gtag',
-    "@nuxt/image"
+    '@nuxt/image'
   ],
 
   runtimeConfig: {
@@ -92,8 +89,8 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/assets/scss/main.scss" as *;`,
-        },
+          additionalData: `@use "@/assets/scss/main.scss" as *;`
+        }
       }
     }
   },
@@ -106,7 +103,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/style-guide'],
+    exclude: ['/style-guide']
   },
 
   gtag: {
@@ -122,7 +119,7 @@ export default defineNuxtConfig({
       callback: '/',
       include: undefined,
       exclude: [],
-      cookieRedirect: false,
+      cookieRedirect: false
     }
   },
 
@@ -134,9 +131,9 @@ export default defineNuxtConfig({
         h3: false,
         h4: false,
         h5: false,
-        h6: false,
+        h6: false
       }
-    },
+    }
   },
 
   compatibilityDate: '2024-09-04'

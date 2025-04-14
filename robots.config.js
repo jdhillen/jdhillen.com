@@ -7,4 +7,4 @@ export default [
   { BlankLine: true },
   { Comment: 'Robots will rise up and KILL US ALL!' },
   { Sitemap: () => `${process.env.NUXT_PUBLIC_SITE_URL}/sitemap.xml` }
-]
+];

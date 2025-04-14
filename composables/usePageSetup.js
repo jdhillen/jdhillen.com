@@ -18,28 +18,26 @@ export default function usePageSetup(options = {}) {
   } = options;
 
   const route = useRoute();
-  
+
   // Determine what slug/identifier to use
   const slugParam = useParams ? route.params.slug : route.name;
-  
+
   // Fetch the main page data
   const { data } = useFetch(`/api/${apiEndpoint}?slug=${slugParam}`);
-  
+
   // Set up page metadata
-  useHead(() => {
-    return data.value ? useMetaData(route, data.value) : {};
-  });
-  
+  useHead(() => (data.value ? useMetaData(route, data.value) : {}));
+
   // Note: Page transitions are handled globally in plugins/transitions.js
   // No need to configure transitions per-page anymore
-  
+
   // If needed, fetch a list of items (for index pages)
   let listData = null;
   if (fetchList && listEndpoint) {
     const { data: fetchedListData } = useFetch(`/api/${listEndpoint}`);
     listData = fetchedListData;
   }
-  
+
   // Return all the data
   return {
     data,

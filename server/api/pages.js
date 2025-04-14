@@ -6,19 +6,13 @@ export default defineEventHandler(async (event) => {
 
   try {
     if (slug) {
-      const { data, error } = await supabase
-        .from('pages')
-        .select('*')
-        .eq('slug', slug)
-        .single();
-      
+      const { data, error } = await supabase.from('pages').select('*').eq('slug', slug).single();
+
       if (error) throw error;
       return data;
     } else {
-      const { data, error } = await supabase
-        .from('pages')
-        .select('*');
-      
+      const { data, error } = await supabase.from('pages').select('*');
+
       if (error) throw error;
       return data;
     }

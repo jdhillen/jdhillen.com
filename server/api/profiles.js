@@ -1,6 +1,6 @@
 import { getSupabaseClient } from '../utils/supabase';
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
   const supabase = getSupabaseClient();
   const PROFILE_ID = 'ef85c3cf-b659-458e-a900-301fc4fa26a0';
 
@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
       .select('*')
       .eq('id', PROFILE_ID)
       .single();
-    
+
     if (error) throw error;
     return data;
   } catch (error) {

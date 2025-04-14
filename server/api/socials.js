@@ -1,6 +1,6 @@
 import { getSupabaseClient } from '../utils/supabase';
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (_event) => {
   const supabase = getSupabaseClient();
 
   try {
@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
       .select('*')
       .eq('enabled', true)
       .order('order', { ascending: true });
-    
+
     if (error) throw error;
     return data;
   } catch (error) {
