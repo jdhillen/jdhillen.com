@@ -1,35 +1,30 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section
-    class="page"
-    v-if="data && talks"
-  >
-    <div class="container">
-      <div class="row">
-        <div class="twelve columns">
-          <h1>{{ data.name }}</h1>
-          <MDC
-            :value="data.body"
-            tag="article"
-          />
-        </div>
-      </div>
-      <div class="talks">
-        <TalkCard
-          v-for="talk in talks"
-          :slug="talk.slug"
-          :name="talk.name"
-          :description="talk.description"
-          :thumbnail="talk.thumbnail"
-        />
-      </div>
+  <div v-if="data">
+    <h1>{{ data.name }}</h1>
+    <MDC
+      :value="data.body"
+      tag="article"
+    />
+    <div class="talks">
+      <TalkCard
+        v-for="talk in talks"
+        :slug="talk.slug"
+        :name="talk.name"
+        :description="talk.description"
+        :thumbnail="talk.thumbnail"
+      />
     </div>
-  </section>
+  </div>
   <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+  definePageMeta({
+    layout: 'default-page'
+  });
+
   const { data, list: talks } = usePageSetup({
     fetchList: true,
     listEndpoint: 'talks'
