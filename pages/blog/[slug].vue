@@ -1,40 +1,31 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section
-    class="page post"
-    v-if="data"
-  >
-    <div class="container">
-      <div class="row">
-        <div class="twelve columns">
-          <h1>{{ data.title }}</h1>
-          <div class="post__subhead">
-            <div class="post__date">{{ usePostDate(data.created_at) }}</div>
-            <div class="post__time">{{ calcReadingTime(data.body) }} minute read</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="twelve columns">
-          <NuxtImg
-            preload
-            class="post__image"
-            :src="data.meta_image"
-            :alt="data.meta_title"
-          />
-          <MDC
-            :value="data.body"
-            tag="article"
-          />
-        </div>
-      </div>
+  <div v-if="data" class="post">
+    <h1>{{ data.title }}</h1>
+    <div class="post__subhead">
+      <div class="post__date">{{ usePostDate(data.created_at) }}</div>
+      <div class="post__time">{{ calcReadingTime(data.body) }} minute read</div>
     </div>
-  </section>
+    <NuxtImg
+      preload
+      class="post__image"
+      :src="data.meta_image"
+      :alt="data.meta_title"
+    />
+    <MDC
+      :value="data.body"
+      tag="article"
+    />
+  </div>
   <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+  definePageMeta({
+    layout: 'default-page'
+  });
+
   const { data } = usePageSetup({
     apiEndpoint: 'blogs',
     useParams: true

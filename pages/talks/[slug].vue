@@ -1,36 +1,27 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section
-    class="page talk"
-    v-if="data"
-  >
-    <div class="container">
-      <div class="row">
-        <div class="twelve columns">
-          <h1>{{ data.name }}</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="twelve columns">
-          <NuxtImg
-            preload
-            class="talk__image"
-            :src="data.thumbnail"
-            :alt="data.name"
-          />
-          <MDC
-            :value="data.body"
-            tag="article"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+  <div v-if="data" class="talk">
+    <h1>{{ data.name }}</h1>
+    <NuxtImg
+      preload
+      class="talk__image"
+      :src="data.thumbnail"
+      :alt="data.name"
+    />
+    <MDC
+      :value="data.body"
+      tag="article"
+    />
+  </div>
   <LoadingState v-else />
 </template>
 
 <!--|== Scripts ================================================================================ -->
 <script setup>
+  definePageMeta({
+    layout: 'default-page'
+  });
+
   const { data } = usePageSetup({
     apiEndpoint: 'talks',
     useParams: true

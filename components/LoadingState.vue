@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <section class="page loading">
+  <div class="loading">
     <div class="container">
       <div class="row">
         <div class="twelve columns">
@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <!--|== Scripts ================================================================================ -->
