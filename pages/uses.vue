@@ -1,6 +1,6 @@
 <!--|== Template =============================================================================== -->
 <template>
-  <div v-if="data" class="uses">
+  <div v-if="data">
     <h1>{{ data.name }}</h1>
     <MDC
       :value="data.body"
