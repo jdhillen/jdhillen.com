@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/scss/vendor/_reset.scss', '@/assets/scss/vendor/_skeleton.scss'],
