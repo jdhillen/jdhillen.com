@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/jdhillen/jdhillen.com/compare/1.1.0...1.1.1) (2025-11-13)
+
+
+### Bug Fixes
+
+* **meta:** enable SSR and fix Open Graph metadata attributes ([3cae64e](https://github.com/jdhillen/jdhillen.com/commit/3cae64e63e2f61fe52b28bf630a8dd687888b42a))
+
 # [1.1.0](https://github.com/jdhillen/jdhillen.com/compare/1.0.6...1.1.0) (2025-04-28)
 
 
