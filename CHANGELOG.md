@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/jdhillen/jdhillen.com/compare/1.1.1...1.2.0) (2026-01-22)
+
+
+### Bug Fixes
+
+* **security:** patch XSS vulnerability in @nuxtjs/mdc and transitive deps ([cc05ed1](https://github.com/jdhillen/jdhillen.com/commit/cc05ed19c614f7789033247861dcac6526f37efc))
+
+
+### Features
+
+* **deps:** upgrade to Nuxt 4.2.2 ([9cbfbbc](https://github.com/jdhillen/jdhillen.com/commit/9cbfbbce680148d013ca30f9ccb240b9c6010838))
+
 ## [1.1.1](https://github.com/jdhillen/jdhillen.com/compare/1.1.0...1.1.1) (2025-11-13)
 
 
