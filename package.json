@@ -32,8 +32,8 @@
     "@nuxtjs/supabase": "^2.0.3",
     "@types/rss": "^0.0.32",
     "ipx": "^3.1.1",
-    "nuxt": "^3.17.0",
-    "nuxt-gtag": "^3.0.2",
+    "nuxt": "^4.2.2",
+    "nuxt-gtag": "^4.1.0",
     "sass": "^1.97.3"
   },
   "dependencies": {
