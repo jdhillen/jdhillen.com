@@ -1,5 +1,8 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Keep flat directory structure (Nuxt 4 default is app/ directory)
+  srcDir: '.',
+
   ssr: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -136,5 +139,5 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2024-09-04'
+  compatibilityDate: '2025-01-22'
 });
